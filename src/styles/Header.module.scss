@@ -1,0 +1,90 @@
+@use './global' as *;
+
+.header {
+  background-color: $themeColor;
+  color: white;
+  padding: 21px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98vw;
+  height: 120px;
+  border-radius: 22.5px;
+
+  .logoSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .logo {
+      width: 75px;
+      height: 75px;
+    }
+    
+      .campusDetails{
+    
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        .title {
+          font-size: 24px;
+          margin: 0;
+          font-weight: 500;
+          line-height: 0.9;
+          height: fit-content;
+        }
+        
+        .campus {
+          font-size: 18.3px;
+          font-weight: 500;
+          margin: 0;
+          height: fit-content;
+        }
+      }
+  }
+
+  
+
+  
+  .userSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .userImage {
+      width: 52.5px;
+      height: 52.5px;
+      border-radius: 50%;
+    }
+
+    .userDetails {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .username {
+        font-size: 21px;
+        font-weight: 500;
+      }
+      .userId{
+        display: flex;
+        justify-content: space-between;
+        font-size: 16.5px;
+        .dropdownArrow{
+          width: 14px;
+        }
+      }
+    }
+    
+  }
+
+  
+
+}
+
+
+
+
+
+
