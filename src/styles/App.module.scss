@@ -1,6 +1,6 @@
-@use './global' as *;
+@use "./global" as *;
 
-.pageWrapper{
+.pageWrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -9,10 +9,10 @@
   margin-top: 22px;
   .container {
     display: flex;
-    min-height: 100vh;
-    width: 98vw;
+
+    width: 97vw;
   }
-  
+
   .mainContent {
     display: flex;
     flex-grow: 1;

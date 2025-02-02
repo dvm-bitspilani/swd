@@ -1,4 +1,4 @@
-@use './global' as *;
+@use "./global" as *;
 
 .header {
   background-color: $themeColor;
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 98vw;
+  width: 97vw;
   height: 120px;
   border-radius: 22.5px;
 
@@ -20,33 +20,29 @@
       width: 75px;
       height: 75px;
     }
-    
-      .campusDetails{
-    
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        flex-direction: column;
-        .title {
-          font-size: 24px;
-          margin: 0;
-          font-weight: 500;
-          line-height: 0.9;
-          height: fit-content;
-        }
-        
-        .campus {
-          font-size: 18.3px;
-          font-weight: 500;
-          margin: 0;
-          height: fit-content;
-        }
+
+    .campusDetails {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 500;
+        line-height: 0.9;
+        height: fit-content;
       }
+
+      .campus {
+        font-size: 18.3px;
+        font-weight: 500;
+        margin: 0;
+        height: fit-content;
+      }
+    }
   }
 
-  
-
-  
   .userSection {
     display: flex;
     align-items: center;
@@ -67,24 +63,18 @@
         font-size: 21px;
         font-weight: 500;
       }
-      .userId{
+      .userId {
         display: flex;
         justify-content: space-between;
         font-size: 16.5px;
-        .dropdownArrow{
+        .dropdownArrow {
           width: 14px;
+          &:hover {
+            cursor: pointer;
+            scale: 1.1;
+          }
         }
       }
     }
-    
   }
-
-  
-
 }
-
-
-
-
-
-
