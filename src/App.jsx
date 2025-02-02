@@ -1,7 +1,20 @@
-import "./App.css";
+import styles from"./styles/App.module.css"
+import Header from "./components/Header"
+import Sidebar from "./components/Sidebar"
+import Content from "./components/Content"
 
 function App() {
-  return <></>;
+  return (
+    <div>
+      <Header />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <Sidebar />
+          <Content />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
