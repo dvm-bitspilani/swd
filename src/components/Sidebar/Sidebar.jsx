@@ -1,4 +1,4 @@
-import styles from "../styles/Sidebar.module.scss";
+import styles from "./Sidebar.module.scss";
 import { useState } from "react";
 
 import overview from "/svgs/overview.svg";
@@ -29,6 +29,7 @@ const menuItems = [
   { icon: duplicateIdCard, name: "Duplicate ID Card" },
   { icon: orientationProgram, name: "Orientation Program" },
 ];
+
 export default function Sidebar() {
   const [selectedMenuItem, setSelectedMenuItem] = useState(0);
   const handleMenuItemClick = (index) => {
@@ -37,7 +38,7 @@ export default function Sidebar() {
   return (
     <nav className={styles.sidebar}>
       <div className={styles.homebtn}>
-        <img src={homeBtn} alt="Home" />
+        <img src={homeBtn} alt="Home" className={styles.homebtnIcon} />
         SWD Home
       </div>
       <div className={styles.menu}>

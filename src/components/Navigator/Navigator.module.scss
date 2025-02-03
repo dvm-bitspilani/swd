@@ -1,0 +1,25 @@
+@use "/src/global.scss" as *;
+
+.navigator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 22px;
+  font-family: "Inter";
+
+  a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .forwardArrowSVG {
+    width: 9px;
+    height: 9px;
+  }
+}

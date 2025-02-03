@@ -1,4 +1,4 @@
-@use "./global" as *;
+@use "/src/global" as *;
 
 @mixin menuItem {
   display: flex;
@@ -24,7 +24,9 @@
     background-color: $themeBgColor;
     color: #000000;
     padding: 15px 22px;
-    height: 59px;
+    .homebtnIcon {
+      scale: 0.75;
+    }
   }
 
   .menu {
@@ -35,6 +37,9 @@
     .menuItem {
       @include menuItem;
       color: #000000;
+    }
+    .menuIcon {
+      scale: 0.75;
     }
 
     .menuItem:hover {
