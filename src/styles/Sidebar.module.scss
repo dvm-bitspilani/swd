@@ -16,6 +16,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-family: "Inter";
+  font-weight: 400;
 
   .homebtn {
     @include menuItem;
@@ -36,7 +38,7 @@
     }
 
     .menuItem:hover {
-      background-color: #e0e0e0;
+      background-color: #b3b3b3;
     }
 
     .activeMenuItem {

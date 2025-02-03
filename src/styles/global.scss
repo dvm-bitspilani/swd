@@ -9,5 +9,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
+@font-face {
+  font-family: "EuropaGroteskReg";
+  src: url("/public/fonts/EuropaGroteskSH-Reg.otf") format("opentype");
+}
+@font-face {
+  font-family: "EuropaGroteskMed";
+  src: url("/public/fonts/EuropaGroteskSH-Med.otf") format("opentype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 $themeColor: #211d70;
 $themeBgColor: #d9d9d9;

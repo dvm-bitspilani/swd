@@ -26,21 +26,35 @@
       align-items: start;
       justify-content: center;
       flex-direction: column;
+
       .title {
-        font-size: 24px;
+        font-family: "EuropaGroteskMed";
+        font-size: 28.5px;
         margin: 0;
         font-weight: 500;
         line-height: 0.9;
         height: fit-content;
+        letter-spacing: 1px;
       }
 
       .campus {
-        font-size: 18.3px;
+        font-family: "EuropaGroteskReg";
+        font-size: 21.75px;
         font-weight: 500;
         margin: 0;
         height: fit-content;
+        letter-spacing: 1px;
+        text-align: center;
       }
     }
+  }
+
+  .pageTitle {
+    font-family: "EuropaGroteskMed";
+    font-weight: 500;
+    font-size: 37px;
+    text-align: center;
+    letter-spacing: 1px;
   }
 
   .userSection {
@@ -60,18 +74,23 @@
       gap: 5px;
 
       .username {
-        font-size: 21px;
+        font-family: "EuropaGroteskMed";
+        letter-spacing: 1px;
+        font-size: 24.75px;
         font-weight: 500;
       }
       .userId {
         display: flex;
+        font-family: "EuropaGroteskReg";
+        // font-weight: 400;
+        letter-spacing: 1px;
         justify-content: space-between;
-        font-size: 16.5px;
+        align-items: start;
+        font-size: 19.5px;
         .dropdownArrow {
           width: 14px;
           &:hover {
             cursor: pointer;
-            scale: 1.1;
           }
         }
       }
