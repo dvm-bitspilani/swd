@@ -1,0 +1,28 @@
+@use "/src/global.scss" as *;
+
+.general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 25.5px 45px;
+  background-color: $themeBgColor;
+  border-radius: 22.5px;
+  //   align-items: center;
+  .detail {
+    display: grid;
+    grid-template-columns: 324px auto;
+    font-family: "inter", sans-serif;
+    font-size: 18.75px;
+    .name {
+      font-weight: 500;
+    }
+    .value {
+      font-weight: 400;
+      color: $themeColor;
+      a {
+        color: $linkColor;
+      }
+    }
+  }
+}

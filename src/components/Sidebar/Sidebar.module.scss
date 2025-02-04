@@ -18,6 +18,8 @@
   gap: 20px;
   font-family: "Inter";
   font-weight: 400;
+  cursor: default;
+  user-select: none;
 
   .homebtn {
     @include menuItem;

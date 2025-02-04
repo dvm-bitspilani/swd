@@ -1,39 +1,13 @@
 import styles from "./Sidebar.module.scss";
 import { useState } from "react";
 
-import overview from "/svgs/overview.svg";
-import myProfile from "/svgs/myProfile.svg";
-import dues from "/svgs/dues.svg";
-import certificates from "/svgs/certificates.svg";
-import scholarships from "/svgs/scholarships.svg";
-import travelConcessions from "/svgs/travelConcessions.svg";
-import clubs from "/svgs/clubs.svg";
-import raf from "/svgs/raf.svg";
-import passportAndMess from "/svgs/passportAndMess.svg";
-import uploadingPhotoForIdCard from "/svgs/uploadingPhotoForIdCard.svg";
-import duplicateIdCard from "/svgs/duplicateIdCard.svg";
-import orientationProgram from "/svgs/orientationProgram.svg";
 import homeBtn from "/svgs/homeBtn.svg";
-
-const menuItems = [
-  { icon: overview, name: "Overview" },
-  { icon: myProfile, name: "My Profile" },
-  { icon: dues, name: "Dues" },
-  { icon: certificates, name: "Certificates" },
-  { icon: scholarships, name: "Scholarships" },
-  { icon: travelConcessions, name: "Travel Concessions" },
-  { icon: clubs, name: "Clubs" },
-  { icon: raf, name: "RAF" },
-  { icon: passportAndMess, name: "Passport & Mess" },
-  { icon: uploadingPhotoForIdCard, name: "Uploading Photo for ID Card" },
-  { icon: duplicateIdCard, name: "Duplicate ID Card" },
-  { icon: orientationProgram, name: "Orientation Program" },
-];
+import menuItems from "/src/Pages";
 
 export default function Sidebar() {
-  const [selectedMenuItem, setSelectedMenuItem] = useState(0);
-  const handleMenuItemClick = (index) => {
-    setSelectedMenuItem(index);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(menuItems[0].name);
+  const handleMenuItemClick = (name) => {
+    setSelectedMenuItem(name);
   };
   return (
     <nav className={styles.sidebar}>
@@ -46,12 +20,12 @@ export default function Sidebar() {
           <div
             key={index}
             className={
-              index === selectedMenuItem
+              item.name === selectedMenuItem
                 ? styles.activeMenuItem
                 : styles.menuItem
             }
             onClick={() => {
-              handleMenuItemClick(index);
+              handleMenuItemClick(item.name);
             }}
           >
             <img src={item.icon} alt={item.name} className={styles.menuIcon} />
