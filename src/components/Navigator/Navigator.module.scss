@@ -1,11 +1,13 @@
-@use "/src/global.scss" as *;
+@use "/src/assets/global" as *;
 
 .navigator {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 15px 22px;
+  height: 54px;
+  padding-left: 22px;
   font-family: "Inter";
+  min-height: fit-content;
 
   a {
     color: black;

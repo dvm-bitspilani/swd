@@ -51,27 +51,15 @@ const policyDetails = [
   },
   {
     name: "Check List for TPA",
-    value: (
-      <a href="#" class="link">
-        CHECK_LIST
-      </a>
-    ),
+    value: <a href="#">CHECK_LIST</a>,
   },
   {
     name: "Reckoner GMC",
-    value: (
-      <a href="#" class="link">
-        CLAIM PROCESS_GMC
-      </a>
-    ),
+    value: <a href="#">CLAIM PROCESS_GMC</a>,
   },
   {
     name: "Reckoner GPA",
-    value: (
-      <a href="#" class="link">
-        CLAIM PROCESS_GPA
-      </a>
-    ),
+    value: <a href="#">CLAIM PROCESS_GPA</a>,
   },
 ];
 

@@ -1,5 +1,5 @@
 import styles from "./Overview.module.scss";
-import mail from "/svgs/Mail.svg";
+import mail from "/svgs/mail.svg";
 
 export default function Overview() {
   return (

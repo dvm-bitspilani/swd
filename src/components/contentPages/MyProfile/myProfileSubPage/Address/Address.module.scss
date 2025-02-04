@@ -1,0 +1,41 @@
+@use "/src/assets/global.scss" as *;
+
+@mixin flexCenter($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+.address {
+  background-color: $themeBgColor;
+  @include flexCenter;
+  padding: 25.5px 45px;
+  border-radius: 22.5px;
+  gap: 28.5px;
+  font-family: "inter", sans-serif;
+  font-size: 19.9px;
+  .addresslines {
+    @include flexCenter;
+  }
+  .addressChangeMail {
+    @include flexCenter(row);
+    gap: 5px;
+    .forAddChange {
+      font-weight: 500;
+    }
+    .mailId {
+      @include flexCenter(row);
+      gap: 15px;
+      font-weight: 400px;
+      a {
+        @include flexCenter(row);
+        color: $themeColor;
+        text-decoration: none;
+        img {
+          scale: 0.75;
+        }
+      }
+    }
+  }
+}

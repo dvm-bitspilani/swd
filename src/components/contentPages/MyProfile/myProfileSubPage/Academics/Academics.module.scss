@@ -1,0 +1,40 @@
+@use "/src/assets/global.scss" as *;
+
+@mixin flexCenter($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+.academics {
+  background-color: $themeBgColor;
+  @include flexCenter;
+  padding: 25.5px 45px;
+  border-radius: 22.5px;
+  gap: 28.5px;
+  font-family: "inter", sans-serif;
+  font-size: 19.9px;
+  .academicDetails {
+    text-align: center;
+    .tableHead {
+      font-size: 21px;
+      font-weight: 600;
+      th {
+        width: 180px;
+      }
+    }
+    .tableRow {
+      font-size: 36px;
+      font-weight: 600;
+      color: #ea9830;
+      .cg {
+        color: $themeColor;
+      }
+    }
+  }
+  .disclaimer {
+    @include flexCenter;
+    font-size: 19.9px;
+  }
+}

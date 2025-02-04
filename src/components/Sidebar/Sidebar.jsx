@@ -2,7 +2,7 @@ import styles from "./Sidebar.module.scss";
 import { useState } from "react";
 
 import homeBtn from "/svgs/homeBtn.svg";
-import menuItems from "/src/Pages";
+import menuItems from "/src/assets/Pages";
 
 export default function Sidebar() {
   const [selectedMenuItem, setSelectedMenuItem] = useState(menuItems[0].name);

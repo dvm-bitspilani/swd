@@ -4,9 +4,9 @@ import forwardArrow from "/svgs/forwardArrow.svg";
 
 export default function Navigator() {
   return (
-    <nav className={styles.navigator}>
+    <div className={styles.navigator}>
       <a href="#">
-        <img src={globe} alt="globeSVG"/>
+        <img src={globe} alt="globeSVG" />
         SWD
       </a>
       <img
@@ -15,6 +15,6 @@ export default function Navigator() {
         className={styles.forwardArrowSVG}
       />
       <p>Overview</p>
-    </nav>
+    </div>
   );
 }
