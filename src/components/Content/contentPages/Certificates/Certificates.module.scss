@@ -1,0 +1,8 @@
+@use "/src/assets/global.scss" as *;
+
+@mixin flexCenter($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}

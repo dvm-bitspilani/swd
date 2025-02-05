@@ -7,7 +7,6 @@
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
 }
 
@@ -16,16 +15,16 @@ body {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  width: 100%;
-  margin-top: 22.5px;
+  margin: 22.5px;
+
+
   .container {
     display: flex;
+    width: 100%;
 
-    width: 97vw;
-  }
-
-  .mainContent {
-    display: flex;
-    flex-grow: 1;
+    .mainContent {
+      display: flex;
+      flex-grow: 1;
+    }
   }
 }
