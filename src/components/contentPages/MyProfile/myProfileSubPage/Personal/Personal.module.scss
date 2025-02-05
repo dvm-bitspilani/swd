@@ -1,0 +1,43 @@
+@use "/src/assets/global.scss" as *;
+
+.personal {
+  gap: 5px;
+  padding: 25.5px 45px;
+  border-radius: 22.5px;
+  background-color: $themeBgColor;
+  font-family: "Inter";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .title {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .details {
+      .row {
+        display: flex;
+        font-size: 16.5px;
+        font-weight: 400;
+        .label {
+          width: 170px;
+          color: $themeColor;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .buttonContainer {
+    grid-row: inherit;
+    grid-column: 1/3;
+    align-self: center;
+    justify-self: center;
+    .changeBtn {
+      width: 181.5px;
+    }
+  }
+}
