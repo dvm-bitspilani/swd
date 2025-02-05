@@ -1,0 +1,20 @@
+@use "/src/assets/global.scss" as *;
+
+.certificates {
+  .selectCertificate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+    font-family: "inter";
+    .btnContainer {
+      .applyBtn {
+        width: 181.5px;
+      }
+    }
+  }
+}
