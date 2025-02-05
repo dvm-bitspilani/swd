@@ -11,7 +11,7 @@ import uploadingPhotoForIdCard from "/svgs/uploadingPhotoForIdCard.svg";
 import duplicateIdCard from "/svgs/duplicateIdCard.svg";
 import orientationProgram from "/svgs/orientationProgram.svg";
 
-const menuItems = [
+const pages = [
   {
     icon: overview,
     name: "Overview",
@@ -74,4 +74,4 @@ const menuItems = [
   },
 ];
 
-export default menuItems;
+export default pages;
