@@ -1,5 +1,5 @@
 import styles from "./Navigator.module.scss";
-import globe from "/svgs/Globe.svg";
+import globe from "/svgs/globe.svg";
 import forwardArrow from "/svgs/forwardArrow.svg";
 
 export default function Navigator() {
