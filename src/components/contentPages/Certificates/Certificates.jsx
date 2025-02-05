@@ -14,31 +14,41 @@ const certificatesList = [
 const prevList = [];
 
 export default function Certificates() {
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.certificates}>
       <div className={styles.selectCertificate}>
-        <div className={styles.title}>APPLY FOR CERTIFICATES</div>
-        <div className={styles.selectOptions}>
-          <select name="certi" id="certi">
-            <option value={undefined} disabled selected>
-              Select certificate Type
-            </option>
-            {certificatesList.map((certi, index) => (
-              <option key={index} value={certi}>
-                {certi}
+        <form
+          className={styles.certificateForm}
+          onSubmit={submitHandler}
+          action=""
+        >
+          <div className={styles.title}>APPLY FOR CERTIFICATES</div>
+          <div className={styles.selOptsContainer}>
+            <select className={styles.certificateDropdown}>
+              <option value={undefined} disabled selected>
+                Select certificate Type
               </option>
-            ))}
-          </select>
-        </div>
-        <div className={styles.btnContainer}>
-          <Button className={styles.applyBtn}> Apply </Button>
-        </div>
+              {certificatesList.map((certi, index) => (
+                <option key={index} value={certi}>
+                  {certi}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.btnContainer}>
+            <Button className={styles.applyBtn}> Apply </Button>
+          </div>
+        </form>
       </div>
       <div className={styles.info}>
         For any other certificate, contact the SWD Office.
       </div>
       <div className={styles.prevApplied}>
-        <div className="title">PREVIOUSLY APPLIED CERRTIFICATES</div>
+        <div className={styles.title}>PREVIOUSLY APPLIED CERRTIFICATES</div>
         <div className={styles.appliedCerti}>
           {prevList.length > 0 ? (
             <></>
