@@ -40,7 +40,9 @@ export default function Certificates() {
             </select>
           </div>
           <div className={styles.btnContainer}>
-            <Button className={styles.applyBtn}> Apply </Button>
+            <Button className={styles.applyBtn} type="submit">
+              Apply
+            </Button>
           </div>
         </form>
       </div>

@@ -5,6 +5,7 @@ import Navigator from "../Navigator/Navigator";
 import styles from "./Content.module.scss";
 import { useContext } from "react";
 import { ActivePageContext } from "../../assets/store/activePageContext";
+import Scholarships from "./contentPages/Scholarships/Scholarships";
 
 export default function Content() {
   const { activePage } = useContext(ActivePageContext);
@@ -14,6 +15,7 @@ export default function Content() {
       {activePage === "Overview" && <Overview />}
       {activePage === "My Profile" && <MyProfile />}
       {activePage === "Certificates" && <Certificates />}
+      {activePage === "Scholarships" && <Scholarships />}
     </main>
   );
 }
