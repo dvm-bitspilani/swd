@@ -1,0 +1,225 @@
+@use "/src/assets/global.scss" as *;
+.mcn {
+  font-family: "inter";
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .infoText {
+    padding: 25.5px 30px;
+    font-size: 18.75px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 400;
+    a {
+      color: $linkColor;
+    }
+  }
+  .mcnDetails {
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      appearance: textfield;
+    }
+
+    .details {
+      font-size: 18.75px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 25px;
+      width: 100%;
+
+      align-self: flex-start;
+
+      .label {
+        color: $themeColor;
+      }
+
+      .parentSection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+          font-size: 19.9px;
+          font-weight: 600;
+        }
+        .autoFillData {
+          display: flex;
+          .label {
+            width: 120px;
+          }
+        }
+
+        .formGroup {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .incomeWrapper {
+            display: flex;
+            align-items: center;
+            background-color: $inputBgColor;
+            height: 30px;
+            width: 300px;
+            padding-right: 8px;
+            border-radius: 4.5px;
+            position: relative;
+
+            .hoverInfo {
+              position: absolute;
+              top: 50%;
+              left: 100%;
+              transform: translateY(-50%);
+              width: 250px;
+              background-color: #ffffff;
+              padding: 10px 21px;
+              border-radius: 10px;
+              border: 1px solid black;
+              display: none;
+
+              img {
+                position: absolute;
+                top: 50%;
+                left: 0%;
+                transform: translate(-90%, -50%);
+              }
+            }
+
+            &:focus-within {
+              outline: 2px solid black;
+              outline-offset: -3px;
+            }
+
+            .income {
+              border-radius: 4.5px;
+              padding-left: 10px;
+              padding-right: 5px;
+              font-size: 16.5px;
+              height: 30px;
+              flex: 1;
+              border: none;
+              font-family: "inter";
+              background-color: $inputBgColor;
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            .icon {
+              scale: 0.75;
+            }
+
+            .icon:hover + .hoverInfo {
+              display: block;
+            }
+          }
+
+          .certificateType {
+            padding: 0px 10px;
+            font-size: 16.5px;
+            height: 30px;
+            width: 300px;
+            border: none;
+            border-radius: 4.5px;
+            background-color: $inputBgColor;
+            font-family: "inter";
+          }
+        }
+      }
+
+      .uploadSection {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .fileInfo {
+          color: $themeColor;
+        }
+        .fileInput {
+          position: relative;
+          height: 30px;
+          width: 100%;
+          background: $inputBgColor;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+          justify-content: space-between;
+          cursor: pointer;
+
+          input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          .browseText {
+            color: #666;
+            font-size: 14px;
+          }
+
+          .plusIcon {
+            color: #666;
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .agreementSection {
+      width: 85%;
+      padding: 21px;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .checkBoxContainer {
+        display: flex;
+        input[type="checkbox"] {
+          accent-color: $themeBgColor;
+          width: 10px;
+          height: 20px;
+        }
+      }
+    }
+
+    .saveBtn {
+      width: 170px;
+    }
+  }
+  .errorMsg {
+    margin: 20px;
+    align-self: center;
+    font-size: 18.75px;
+    font-weight: 700;
+    color: #ed1c24;
+  }
+}
