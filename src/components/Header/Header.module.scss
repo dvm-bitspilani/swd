@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 97vw;
   height: 120px;
   border-radius: 22.5px;
 
@@ -60,7 +60,7 @@
   .userSection {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
     .userImage {
       width: 52.5px;
@@ -82,12 +82,11 @@
       .userId {
         display: flex;
         font-family: "EuropaGroteskReg";
+        // font-weight: 400;
         letter-spacing: 1px;
         justify-content: space-between;
         align-items: start;
         font-size: 19.5px;
-        gap: 20px;
-
         .dropdownArrow {
           width: 14px;
           &:hover {
