@@ -1,8 +1,61 @@
 @use "/src/assets/global.scss" as *;
 
-@mixin flexCenter($direction: column) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
+.certificates {
+  font-family: "inter";
+  .selectCertificate {
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+
+    .certificateForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      .title {
+        font-size: 18.75px;
+        color: $themeColor;
+        font-weight: 600;
+      }
+      .selOptsContainer {
+        .certificateDropdown {
+          font-size: 18.75px;
+          padding: 8px 18px;
+          width: 420px;
+          border: none;
+          border-radius: 4.5px;
+        }
+      }
+    }
+
+    .btnContainer {
+      .applyBtn {
+        width: 171.5px;
+        padding: 12px;
+      }
+    }
+  }
+
+  .info {
+    padding: 25.5px 30px;
+    font-size: 19.9px;
+  }
+
+  .prevApplied {
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 19.9px;
+    .title {
+      font-size: 18.75px;
+      color: $themeColor;
+      font-weight: 600;
+    }
+  }
 }
