@@ -1,13 +1,13 @@
 import styles from "./Sidebar.module.scss";
-import { useState } from "react";
-
+import { useContext} from "react";
+import { ActivePageContext } from "../../assets/store/activePageContext";
 import homeBtn from "/svgs/homeBtn.svg";
-import menuItems from "/src/assets/Pages";
+import pages from "/src/assets/Pages";
 
 export default function Sidebar() {
-  const [selectedMenuItem, setSelectedMenuItem] = useState(menuItems[0].name);
+  const { activePage, setActivePage } = useContext(ActivePageContext);
   const handleMenuItemClick = (name) => {
-    setSelectedMenuItem(name);
+    setActivePage(name);
   };
   return (
     <nav className={styles.sidebar}>
@@ -16,11 +16,11 @@ export default function Sidebar() {
         SWD Home
       </div>
       <div className={styles.menu}>
-        {menuItems.map((item, index) => (
+        {pages.map((item, index) => (
           <div
             key={index}
             className={
-              item.name === selectedMenuItem
+              item.name === activePage
                 ? styles.activeMenuItem
                 : styles.menuItem
             }

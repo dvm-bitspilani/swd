@@ -3,7 +3,7 @@ import bitsLogo from "/bitsLogo.png";
 import dropdownArrow from "/svgs/dropdownArrow.svg";
 import icon from "/icon.jpg";
 
-export default function Header({ name = "Hello", id = "2026479273479" }) {
+export default function Header({ name = "Chita swamy...", id = "2024B3A5PS0921P" }) {
   return (
     <header className={styles.header}>
       <div className={styles.logoSection}>
