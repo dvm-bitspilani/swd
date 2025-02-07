@@ -1,5 +1,6 @@
 import DepositHistory from "./duesSubPages/Deposits/Deposits";
 import CurrentStatus from "./duesSubPages/CurrentStatus/CurrentStatus";
+import FeeDemand from "./duesSubPages/FeeDemand/FeeDemand";
 
 const sampleData = [
   {
@@ -23,13 +24,18 @@ const sampleData2 = {
 };
 
 const Dues = () => {
-  // return <DepositHistory deposits={sampleData} />;
   return (
-    <CurrentStatus
-      dueDate={sampleData2.dueDate}
-      balances={sampleData2.balances}
-    />
+    <>
+      {/* <DepositHistory deposits={sampleData} /> */}
+      <CurrentStatus
+        dueDate={sampleData2.dueDate}
+        balances={sampleData2.balances}
+      />
+      {/* <FeeDemand /> */}
+    </>
   );
+
+  return <FeeDemand />;
 };
 
 export default Dues;
