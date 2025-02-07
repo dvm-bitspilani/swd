@@ -1,0 +1,17 @@
+@use "/src/assets/global.scss" as *;
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 5.5px;
+  border: 0.5px solid $tableBorderColor;
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: center;
+    border: 0.5px solid $tableBorderColor;
+    font-size: 15px;
+  }
+}

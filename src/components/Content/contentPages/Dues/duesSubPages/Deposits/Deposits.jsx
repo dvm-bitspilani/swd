@@ -1,4 +1,5 @@
 import styles from "./Deposits.module.scss";
+import Table from "../../../../../../UI/Table/Table";
 
 const DepositHistory = ({ deposits }) => {
   return (
@@ -8,7 +9,7 @@ const DepositHistory = ({ deposits }) => {
         The following deposits were made during the current semester:
       </p>
       <div className={styles.tableWrapper}>
-        <table className={styles.table}>
+        <Table>
           <thead>
             <tr>
               <th>Receipt No.</th>
@@ -31,7 +32,7 @@ const DepositHistory = ({ deposits }) => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Table>
       </div>
     </div>
   );
