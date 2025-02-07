@@ -1,0 +1,49 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+  background-color: $themeBgColor;
+  border-radius: 22.5px;
+  padding: 20px;
+  margin: 20px;
+  font-family: "Inter";
+
+  .title {
+    color: $themeColor;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .description {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+  }
+
+  .tableWrapper {
+    //   overflow-x: auto;
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ea9830;
+      }
+
+      th {
+        background-color: #ffe17f;
+        font-weight: 600;
+        color: $themeColor;
+      }
+
+      td {
+        background-color: white;
+      }
+    }
+  }
+}
