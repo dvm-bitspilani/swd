@@ -3,6 +3,7 @@ import MyProfile from "./contentPages/MyProfile/MyProfile";
 import Certificates from "./contentPages/Certificates/Certificates";
 import Dues from "./contentPages/Dues/Dues";
 import Navigator from "../Navigator/Navigator";
+import Clubs from "./contentPages/Clubs/Clubs";
 import styles from "./Content.module.scss";
 import { useContext } from "react";
 import { ActivePageContext } from "../../assets/store/activePageContext";
@@ -18,6 +19,7 @@ export default function Content() {
       {activePage === "Certificates" && <Certificates />}
       {activePage === "Scholarships" && <Scholarships />}
       {activePage === "Dues" && <Dues />}
+      {activePage === "Clubs" && <Clubs />}
     </main>
   );
 }

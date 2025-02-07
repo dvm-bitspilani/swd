@@ -9,6 +9,9 @@
   font-weight: 600;
   padding: 16.5px;
   border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: $themeColor;
