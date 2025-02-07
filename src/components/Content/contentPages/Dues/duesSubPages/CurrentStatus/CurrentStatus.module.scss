@@ -4,24 +4,28 @@
   background-color: $themeBgColor;
   border-radius: 22.5px;
   padding: 20px;
-  margin: 20px;
   font-family: "Inter";
 
   .title {
     color: $themeColor;
     text-align: center;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     font-size: 19.9px;
     font-weight: 600;
   }
 
-  .description {
+  .dueDate {
     margin: 0 0 20px 0;
-    font-size: 16px;
+    font-size: 18px;
+
+    .date {
+      color: $themeColor;
+      font-weight: 500;
+    }
   }
 
   .tableWrapper {
-    //   overflow-x: auto;
+    // overflow-x: auto;
 
     th {
       background-color: $tableHeaderBgColor;
@@ -37,12 +41,31 @@
 
     td {
       background-color: white;
+
       &:first-child {
-        border-bottom-left-radius: 4.5px;
+        color: $themeColor;
+        font-weight: 600;
       }
-      &:last-child {
-        border-bottom-right-radius: 4.5px;
+    }
+
+    .latestBalance {
+      td {
+        font-weight: 700;
+
+        &:first-child {
+          border-bottom-left-radius: 4.5px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 4.5px;
+          font-weight: 600;
+        }
       }
     }
   }
+}
+
+.note {
+  margin-left: 30px;
+  font-size: 14.6px;
 }
