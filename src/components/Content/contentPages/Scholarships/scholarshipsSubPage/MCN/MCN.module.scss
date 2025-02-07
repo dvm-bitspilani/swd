@@ -4,17 +4,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .infoText {
-    padding: 25.5px 30px;
-    font-size: 18.75px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-weight: 400;
-    a {
-      color: $linkColor;
-    }
-  }
+
   .mcnDetails {
     padding: 25.5px 45px;
     border-radius: 22.5px;
@@ -48,97 +38,65 @@
         color: $themeColor;
       }
 
-      .parentSection {
+      .incomeWrapper {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        align-items: center;
+        background-color: $inputBgColor;
+        height: 30px;
+        width: 300px;
+        padding-right: 8px;
+        border-radius: 4.5px;
+        position: relative;
 
-        .title {
-          font-size: 19.9px;
-          font-weight: 600;
-        }
-        .autoFillData {
-          display: flex;
-          .label {
-            width: 120px;
+        .hoverInfo {
+          position: absolute;
+          top: 100%;
+          right: 0%;
+          transform: translate(0%, 0%);
+          width: 250px;
+          background-color: #ffffff;
+          padding: 10px 21px;
+          border-radius: 10px;
+          border: 1px solid black;
+          display: none;
+          z-index: 4;
+
+          img {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            transform: translate(-100%, 50%);
+            rotate: 90deg;
           }
         }
 
-        .formGroup {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
+        &:focus-within {
+          outline: 2px solid black;
+          outline-offset: -3px;
+        }
 
-          .incomeWrapper {
-            display: flex;
-            align-items: center;
-            background-color: $inputBgColor;
-            height: 30px;
-            width: 300px;
-            padding-right: 8px;
-            border-radius: 4.5px;
-            position: relative;
+        .income {
+          border-radius: 4.5px;
+          padding-left: 10px;
+          padding-right: 5px;
+          font-size: 16.5px;
+          height: 30px;
+          flex: 1;
+          border: none;
+          font-family: "inter";
+          background-color: $inputBgColor;
 
-            .hoverInfo {
-              position: absolute;
-              top: 50%;
-              left: 100%;
-              transform: translateY(-50%);
-              width: 250px;
-              background-color: #ffffff;
-              padding: 10px 21px;
-              border-radius: 10px;
-              border: 1px solid black;
-              display: none;
-
-              img {
-                position: absolute;
-                top: 50%;
-                left: 0%;
-                transform: translate(-90%, -50%);
-              }
-            }
-
-            &:focus-within {
-              outline: 2px solid black;
-              outline-offset: -3px;
-            }
-
-            .income {
-              border-radius: 4.5px;
-              padding-left: 10px;
-              padding-right: 5px;
-              font-size: 16.5px;
-              height: 30px;
-              flex: 1;
-              border: none;
-              font-family: "inter";
-              background-color: $inputBgColor;
-
-              &:focus {
-                outline: none;
-              }
-            }
-
-            .icon {
-              scale: 0.75;
-            }
-
-            .icon:hover + .hoverInfo {
-              display: block;
-            }
+          &:focus {
+            outline: none;
           }
+        }
 
-          .certificateType {
-            padding: 0px 10px;
-            font-size: 16.5px;
-            height: 30px;
-            width: 300px;
-            border: none;
-            border-radius: 4.5px;
-            background-color: $inputBgColor;
-            font-family: "inter";
-          }
+        .icon {
+          scale: 0.75;
+        }
+
+        .icon:hover + .hoverInfo {
+          display: block;
         }
       }
 

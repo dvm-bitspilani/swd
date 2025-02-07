@@ -1,0 +1,15 @@
+@use "/src/assets/global.scss" as *;
+
+.infoText {
+  font-family: "inter";
+  padding: 25.5px 30px;
+  padding-top: 0px;
+  font-size: 18.75px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 400;
+  a {
+    color: $linkColor;
+  }
+}
