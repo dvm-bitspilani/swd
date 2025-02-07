@@ -1,0 +1,51 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+  font-family: "Inter", sans-serif;
+  background-color: $themeBgColor;
+  border-radius: 22.5px;
+  padding: 24px;
+  margin-bottom: 24px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  .title {
+    color: $themeColor;
+    text-align: center;
+    font-size: 19.9px;
+    font-weight: 600;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .formGroup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .select {
+        width: 350px;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 15px;
+        outline: none;
+
+        &:focus {
+          border-color: $themeColor;
+        }
+      }
+    }
+    .submitButton {
+      width: 150px;
+      height: 45px;
+    }
+  }
+}
