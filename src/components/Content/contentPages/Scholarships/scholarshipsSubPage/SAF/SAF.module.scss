@@ -1,0 +1,59 @@
+@use "/src/assets/global.scss" as *;
+.saf {
+  font-family: "inter";
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .safDetails {
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    .details {
+      font-size: 18.75px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 25px;
+      width: 100%;
+
+      align-self: flex-start;
+
+      .label {
+        color: $themeColor;
+      }
+
+      .autoFillData {
+        display: flex;
+        .label {
+          width: 150px;
+        }
+      }
+
+      .externalEmail {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        align-self: center;
+        justify-self: center;
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    .changeBtn {
+      width: 170px;
+    }
+  }
+  .errorMsg {
+    margin: 20px;
+    align-self: center;
+    font-size: 18.75px;
+    font-weight: 700;
+    color: #ed1c24;
+  }
+}
