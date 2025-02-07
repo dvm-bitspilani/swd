@@ -3,6 +3,8 @@ import styles from "./MCN.module.scss";
 import info from "/svgs/info.svg";
 import triangle from "/svgs/triangle.svg";
 import Button from "../../../../../../UI/Button/Button";
+import InfoText from "../scholarshipsComponents/InfoText/InfoText";
+import ParentDetails from "../scholarshipsComponents/ParentDetails/ParentDetails";
 
 const listOfCertificates = [
   "Income Tax Return",
@@ -14,6 +16,22 @@ const listOfCertificates = [
   "Any Other",
   "Not Applicable",
 ];
+
+function IncomeComponent(onChange) {
+  return (
+    <div className={styles.formGroup}>
+      <div className={styles.label}>Income / Year:</div>
+      <div className={styles.incomeWrapper}>
+        <input type="number" className={styles.income} onChange={onChange} />
+        <img src={info} alt="info" className={styles.icon} />
+        <div className={styles.hoverInfo}>
+          <img src={triangle} alt="trinagle" />
+          <div className="msg">Don't use commas or decimals</div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function MCN() {
   const [formData, setFormData] = useState({
@@ -45,129 +63,55 @@ export default function MCN() {
 
   return (
     <div className={styles.mcn}>
-      <div className={styles.infoText}>
-        <p className={styles.warning}>
-          Please make sure that the personal details displayed are correct and
-          upto date, else your application will be discarded.
-        </p>
-        <p>
-          To update the personal details, please modify the details under{" "}
-          <a href="#">My Profile</a>.
-        </p>
-        <p>
-          Please select the appropriate Income Certificate type for your mother
-          and father.
-        </p>
-      </div>
-
+      <InfoText />
       <form onSubmit={handleSubmit} className={styles.mcnDetails}>
         <div className={styles.details}>
-          <div className={styles.parentSection}>
-            <div className={styles.title}>Father's Details</div>
-            <div className={styles.autoFillData}>
-              <div className={styles.label}>Name:</div>
-              <div>{formData.fatherName}</div>
-            </div>
-            <div className={styles.autoFillData}>
-              <div className={styles.label}>Profession:</div>
-              <div>{formData.fatherProfession}</div>
-            </div>
-            <div className={styles.formGroup}>
-              <div className={styles.label}>Income / Year:</div>
-              <div className={styles.incomeWrapper}>
-                <input type="number" className={styles.income} />
-                <img src={info} alt="info" className={styles.icon} />
-                <div className={styles.hoverInfo}>
-                  <img src={triangle} alt="trinagle" />
-                  <div className="msg">Don't use commas or decimals</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.formGroup}>
-              <div className={styles.label}>Income Certificate Type:</div>
-              <select
-                value={formData.fatherCertificateType}
-                className={styles.certificateType}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    fatherCertificateType: e.target.value,
-                  })
-                }
-              >
-                <option value="" disabled selected>
-                  Select
-                </option>
-                {listOfCertificates.map((certificate) => (
-                  <option key={certificate} value={certificate}>
-                    {certificate}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+          <ParentDetails
+            parent="Father"
+            parentName={formData.fatherName}
+            parentCertificate={formData.fatherCertificateType}
+            parentProfession={formData.fatherProfession}
+            onChange={(e) =>
+              setFormData((...prev) => {
+                return { ...prev, fatherCertificateType: e.target.value };
+              })
+            }
+          >
+            <IncomeComponent
+              onChange={(e) =>
+                setFormData((...prev) => {
+                  return { ...prev, fatherIncome: e.target.value };
+                })
+              }
+            />
+          </ParentDetails>
 
-          <div className={styles.parentSection}>
-            <div className={styles.title}>Mother's Details</div>
-            <div className={styles.autoFillData}>
-              <div className={styles.label}>Name:</div>
-              <div>{formData.motherName}</div>
-            </div>
-            <div className={styles.autoFillData}>
-              <div className={styles.label}>Profession:</div>
-              <div>{formData.motherProfession}</div>
-            </div>
-            <div className={styles.formGroup}>
-              <div className={styles.label}>Income / Year:</div>
-              <div className={styles.incomeWrapper}>
-                <input type="number" className={styles.income} />
-                <img src={info} alt="info" className={styles.icon} />
-                <div className={styles.hoverInfo}>
-                  <img src={triangle} alt="trinagle" />
-                  <div className="msg">Don't use commas or decimals</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.formGroup}>
-              <div className={styles.label}>Income Certificate Type:</div>
-              <select
-                value={formData.motherCertificateType}
-                className={styles.certificateType}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    motherCertificateType: e.target.value,
-                  })
-                }
-              >
-                <option value="" disabled selected>
-                  Select
-                </option>
-                {listOfCertificates.map((certificate) => (
-                  <option key={certificate} value={certificate}>
-                    {certificate}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+          <ParentDetails
+            parent="Mother"
+            parentName={formData.motherName}
+            parentCertificate={formData.motherCertificateType}
+            parentProfession={formData.motherProfession}
+            onChange={(e) =>
+              setFormData((...prev) => {
+                return { ...prev, motherCertificateType: e.target.value };
+              })
+            }
+          >
+            <IncomeComponent
+              onChange={(e) =>
+                setFormData((...prev) => {
+                  return { ...prev, motherIncome: e.target.value };
+                })
+              }
+            />
+          </ParentDetails>
 
           <div className={styles.uploadSection}>
             <div className={styles.label}>
               Upload both parents' Income Certificate:
               <p className={styles.fileInfo}>(PDF not exceeding 4MB)</p>
             </div>
-            {/* <input
-              type="file"
-              accept=".pdf"
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  incomeCertificate: e.target.files[0],
-                })
-              }
-              required
-            /> */}
+
             <div className={styles.fileInput}>
               <span className={styles.browseText}>{fileName}</span>
               <span className={styles.plusIcon}>+</span>
@@ -199,7 +143,9 @@ export default function MCN() {
               className={styles.checkbox}
               checked={formData.agreementChecked}
               onChange={(e) =>
-                setFormData({ ...formData, agreementChecked: e.target.checked })
+                setFormData((prev) => {
+                  return { ...prev, agreementChecked: e.target.checked };
+                })
               }
               requireds
             />{" "}
