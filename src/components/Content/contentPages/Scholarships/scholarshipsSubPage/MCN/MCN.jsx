@@ -6,23 +6,17 @@ import Button from "../../../../../../UI/Button/Button";
 import InfoText from "../scholarshipsComponents/InfoText/InfoText";
 import ParentDetails from "../scholarshipsComponents/ParentDetails/ParentDetails";
 
-const listOfCertificates = [
-  "Income Tax Return",
-  "Salary Slip",
-  "Salary Certificate",
-  "Pensioner",
-  "Tehsildar Cert.",
-  "MRO",
-  "Any Other",
-  "Not Applicable",
-];
-
-function IncomeComponent(onChange) {
+function IncomeComponent({ onChange, income }) {
   return (
     <div className={styles.formGroup}>
       <div className={styles.label}>Income / Year:</div>
       <div className={styles.incomeWrapper}>
-        <input type="number" className={styles.income} onChange={onChange} />
+        <input
+          type="number"
+          className={styles.income}
+          onChange={onChange}
+          value={income}
+        />
         <img src={info} alt="info" className={styles.icon} />
         <div className={styles.hoverInfo}>
           <img src={triangle} alt="trinagle" />
@@ -83,6 +77,7 @@ export default function MCN() {
                   return { ...prev, fatherIncome: e.target.value };
                 })
               }
+              income={formData.fatherIncome}
             />
           </ParentDetails>
 
@@ -103,6 +98,7 @@ export default function MCN() {
                   return { ...prev, motherIncome: e.target.value };
                 })
               }
+              income={formData.motherIncome}
             />
           </ParentDetails>
 
@@ -147,7 +143,7 @@ export default function MCN() {
                   return { ...prev, agreementChecked: e.target.checked };
                 })
               }
-              requireds
+              required
             />{" "}
             Agree
           </div>

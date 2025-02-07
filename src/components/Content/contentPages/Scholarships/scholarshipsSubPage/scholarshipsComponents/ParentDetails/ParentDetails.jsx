@@ -38,7 +38,7 @@ export default function ParentDetails({
           className={styles.certificateType}
           onChange={onChange}
         >
-          <option value="" disabled selected>
+          <option value="" disabled>
             Select
           </option>
           {listOfCertificates.map((certificate) => (
