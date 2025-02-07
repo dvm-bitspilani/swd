@@ -1,0 +1,64 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+  background-color: $themeBgColor;
+  border-radius: 22.5px;
+  padding: 20px;
+  margin: 20px;
+  font-family: "Inter";
+
+  .title {
+    color: $themeColor;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 19.9px;
+    font-weight: 600;
+  }
+
+  .description {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+  }
+
+  .tableWrapper {
+    //   overflow-x: auto;
+
+    .table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 5.5px;
+      border: 0.5px solid #ea9830;
+
+      th,
+      td {
+        padding: 12px;
+        border: 0.5px solid #ea9830;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      th {
+        background-color: #ffe17f;
+        font-weight: 600;
+        color: $themeColor;
+        &:first-child {
+          border-top-left-radius: 4.5px;
+        }
+        &:last-child {
+          border-top-right-radius: 4.5px;
+        }
+      }
+
+      td {
+        background-color: white;
+        &:first-child {
+          border-bottom-left-radius: 4.5px;
+        }
+        &:last-child {
+          border-bottom-right-radius: 4.5px;
+        }
+      }
+    }
+  }
+}
