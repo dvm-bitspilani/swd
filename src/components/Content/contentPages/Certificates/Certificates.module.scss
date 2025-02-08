@@ -1,13 +1,13 @@
 @use "/src/assets/global.scss" as *;
 
-.uploadPhotoForIdCard {
+.certificates {
   font-family: "inter";
-  .uploadPhoto {
+  .selectCertificate {
     padding: 25.5px 45px;
     border-radius: 22.5px;
     background-color: $themeBgColor;
 
-    .photoForm {
+    .certificateForm {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -18,7 +18,7 @@
         color: $themeColor;
         font-weight: 600;
       }
-      .uploadPhotoContainer {
+      .selOptsContainer {
         .certificateDropdown {
           font-size: 18.75px;
           padding: 8px 18px;
