@@ -133,7 +133,7 @@ export default function MCN() {
               Scholarship committee in this regard.
             </p>
           </div>
-          <div className="checkBoxContainer">
+          <div className={styles.checkBoxContainer}>
             <input
               type="checkbox"
               className={styles.checkbox}
@@ -144,8 +144,8 @@ export default function MCN() {
                 })
               }
               required
-            />{" "}
-            Agree
+            />
+            <div className="text">Agree</div>
           </div>
         </div>
 

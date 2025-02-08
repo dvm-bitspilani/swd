@@ -159,13 +159,28 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: $themeBgColor;
+        border: 2px solid #525252;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: $themeColor;
+
+        &:checked {
+          appearance: auto;
+          background-color: $themeColor;
+        }
+      }
       .checkBoxContainer {
         display: flex;
-        input[type="checkbox"] {
-          accent-color: $themeBgColor;
-          width: 10px;
-          height: 20px;
-        }
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
       }
     }
 
