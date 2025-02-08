@@ -1,7 +1,7 @@
 import styles from "./Deposits.module.scss";
 import Table from "../../../../../../UI/Table/Table";
 
-const DepositHistory = ({ deposits }) => {
+export default function DepositHistory({ deposits }) {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>DEPOSIT HISTORY</h2>
@@ -36,6 +36,4 @@ const DepositHistory = ({ deposits }) => {
       </div>
     </div>
   );
-};
-
-export default DepositHistory;
+}

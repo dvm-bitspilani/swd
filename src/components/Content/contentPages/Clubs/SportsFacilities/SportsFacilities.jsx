@@ -9,7 +9,7 @@ const BATCH_TIMINGS = [
   "Evening (6:00 PM - 7:00 PM)",
 ];
 
-const SportsFacilities = () => {
+export default function SportsFacilities() {
   const [selectedBatch, setSelectedBatch] = useState("");
 
   const handleSubmit = (e) => {
@@ -60,6 +60,4 @@ const SportsFacilities = () => {
       </form>
     </div>
   );
-};
-
-export default SportsFacilities;
+}

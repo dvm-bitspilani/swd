@@ -1,6 +1,6 @@
 import styles from "./FeeDemand.module.scss";
 
-const FeeDemand = () => {
+export default function FeeDemand() {
   return (
     <div className={styles.mainText}>
       <p>
@@ -12,5 +12,4 @@ const FeeDemand = () => {
       </p>
     </div>
   );
-};
-export default FeeDemand;
+}
