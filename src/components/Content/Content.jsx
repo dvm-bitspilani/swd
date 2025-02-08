@@ -5,9 +5,14 @@ import Scholarships from "./contentPages/Scholarships/Scholarships";
 import Dues from "./contentPages/Dues/Dues";
 import Clubs from "./contentPages/Clubs/Clubs";
 import TravelConcessions from "./contentPages/TravelConcessions/TravelConcessions";
+<<<<<<< HEAD
 import UploadPhotoForIdCard from "./contentPages/UploadPhotoforIdCard/UploadPhotoForIdCard";
 import DuplicateIdCard from "./contentPages/DuplicateIdCard/DuplicateIdCard";
 import Navigator from "../Navigator/Navigator";
+=======
+import RAF from "./contentPages/RAF/RAF";
+import PassportAndMess from "./contentPages/Passport&Mess/Passport&Mess";
+>>>>>>> eaf31460b0bbf860423af5bc88ddb435928a98fa
 import styles from "./Content.module.scss";
 import { useContext } from "react";
 import { ActivePageContext } from "../../assets/store/activePageContext";
@@ -24,8 +29,13 @@ export default function Content() {
       {activePage === "Dues" && <Dues />}
       {activePage === "Clubs" && <Clubs />}
       {activePage === "Travel Concessions" && <TravelConcessions />}
+<<<<<<< HEAD
       {activePage === "Uploading Photo for ID Card" && <UploadPhotoForIdCard />}
       {activePage === "Duplicate ID Card" && <DuplicateIdCard />}
+=======
+      {activePage === "RAF" && <RAF />}
+      {activePage === "Passport & Mess" && <PassportAndMess />}
+>>>>>>> eaf31460b0bbf860423af5bc88ddb435928a98fa
     </main>
   );
 }
