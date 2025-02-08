@@ -47,6 +47,40 @@
           width: 350px;
           font-weight: 500;
         }
+
+        .dateInputWrapper {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dateInput:required:invalid + .placeholder {
+          display: block;
+        }
+
+        .dateInput:focus + .placeholder,
+        .dateInput:valid + .placeholder {
+          display: none;
+        }
+
+        .placeholder {
+          position: absolute;
+          top: 50%;
+          left: 0.5em;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: #757575;
+          display: none;
+        }
+
+        .dateInput::-webkit-datetime-edit-fields-wrapper {
+          display: none;
+        }
+        .dateInput::-webkit-date-and-time-value {
+          opacity: 1;
+        }
+        .dateInput:focus::-webkit-datetime-edit-fields-wrapper {
+          display: inline-block;
+        }
         .input {
           padding: 0px 10px;
           font-size: 16.5px;
