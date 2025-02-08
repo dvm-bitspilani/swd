@@ -9,13 +9,11 @@ const BATCH_TIMINGS = [
   "Evening (6:00 PM - 7:00 PM)",
 ];
 
-const YogaClub = () => {
+export default function YogaClub() {
   const [selectedBatch, setSelectedBatch] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Selected batch:", selectedBatch);
   };
 
   return (
@@ -53,9 +51,10 @@ const YogaClub = () => {
           Apply
         </Button>
       </form>
-      <p className={styles.notAvailable}>This service is currently not available</p>
+
+      <p className={styles.notAvailable}>
+        This service is currently not available
+      </p>
     </div>
   );
-};
-
-export default YogaClub;
+}

@@ -1,7 +1,7 @@
 import styles from "./CurrentStatus.module.scss";
 import Table from "../../../../../../UI/Table/Table";
 
-const CurrentStatus = ({ dueDate, balances }) => {
+export default function CurrentStatus({ dueDate, balances }) {
   return (
     <>
       <div className={styles.container}>
@@ -44,6 +44,4 @@ const CurrentStatus = ({ dueDate, balances }) => {
       </p>
     </>
   );
-};
-
-export default CurrentStatus;
+}

@@ -4,7 +4,7 @@ import SportsFacilities from "./SportsFacilities/SportsFacilities";
 import YogaClub from "./YogaClub/YogaClub";
 import styles from "./Clubs.module.scss";
 
-const Clubs = () => {
+export default function Clubs() {
   return (
     <div>
       <HealthClub />
@@ -12,6 +12,4 @@ const Clubs = () => {
       <YogaClub />
     </div>
   );
-};
-
-export default Clubs;
+}

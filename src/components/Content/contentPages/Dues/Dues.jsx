@@ -23,7 +23,7 @@ const sampleData2 = {
   },
 };
 
-const Dues = () => {
+export default function Dues() {
   return (
     <>
       {/* <DepositHistory deposits={sampleData} /> */}
@@ -34,8 +34,4 @@ const Dues = () => {
       {/* <FeeDemand /> */}
     </>
   );
-
-  return <FeeDemand />;
-};
-
-export default Dues;
+}

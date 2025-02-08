@@ -23,7 +23,7 @@ const ACTIVITIES = [
   { id: "bodyBuilding", name: "Body building" },
 ];
 
-const HealthClub = () => {
+export default function HealthClub() {
   const [formData, setFormData] = useState({
     batch: "",
     sportsCategory: "",
@@ -130,6 +130,4 @@ const HealthClub = () => {
       </div>
     </form>
   );
-};
-
-export default HealthClub;
+}
