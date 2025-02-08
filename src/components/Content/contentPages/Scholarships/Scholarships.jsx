@@ -6,7 +6,7 @@ import Gate from "./scholarshipsSubPage/Gate/Gate";
 export default function Scholarships() {
   return (
     <>
-      {/* <MCN /> */}
+      <MCN />
       {/* <SAF /> */}
       <Gate />
     </>

@@ -56,19 +56,21 @@ export default function TravelComponent({ name, onChange, formData }) {
           <input
             type="checkbox"
             name="concession"
+            id="from"
             value="FromBits"
             onChange={onChange}
           />
-          <div className="label">BITS to {name}</div>
+          <label htmlFor="from">BITS to {name}</label>
         </div>
         <div className={styles.checkBoxDiv}>
           <input
             type="checkbox"
             name="concession"
             value="ToBits"
+            id="to"
             onChange={onChange}
           />
-          <div className="label">{name} to BITS</div>
+          <label htmlFor="to">{name} to BITS</label>
         </div>
       </div>
       <Button type="submit" className={styles.saveBtn}>
