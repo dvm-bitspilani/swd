@@ -2,6 +2,22 @@ import styles from "./Gate.module.scss";
 import { useState } from "react";
 import Button from "../../../../../../UI/Button/Button";
 
+const catagoryList = ["OBC", "SC", "ST", "Any Other"];
+const gateDisciplineList = [
+  "M.E. Biotechnology",
+  "M.E. Chemical",
+  "M.E. Civil",
+  "M.E. Communication Systems",
+  "M.E. Computer Science",
+  "M.E. Design Engineering",
+  "M.E. Embedded Systems",
+  "M.E. Manufacturing Systems Engineering",
+  "M.E. Mechanical Engineering",
+  "M.E. Microelectronics",
+  "M.Pharm",
+  "M.E. Software Systems",
+];
+
 export default function Gate() {
   const [formData, setFormData] = useState({
     category: "",
@@ -54,7 +70,14 @@ export default function Gate() {
               onChange={handleChange}
               className={`${styles.input} ${styles.short}`}
             >
-              <option value="">Select</option>
+              <option value="" disabled>
+                Select
+              </option>
+              {catagoryList.map((station, index) => (
+                <option key={index} value={station}>
+                  {station}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -110,7 +133,14 @@ export default function Gate() {
               onChange={handleChange}
               className={styles.input}
             >
-              <option value="">Select</option>
+              <option value="" disabled>
+                Select
+              </option>
+              {gateDisciplineList.map((station, index) => (
+                <option key={index} value={station}>
+                  {station}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -129,6 +159,7 @@ export default function Gate() {
             <div className={styles.label}>GATE Result Date:</div>
             <input
               type="date"
+              placeholder="Select"
               name="gateResultDate"
               value={formData.gateResultDate}
               onChange={handleChange}
