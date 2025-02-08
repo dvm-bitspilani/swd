@@ -5,6 +5,8 @@ import Dues from "./contentPages/Dues/Dues";
 import Navigator from "../Navigator/Navigator";
 import Clubs from "./contentPages/Clubs/Clubs";
 import TravelConcessions from "./contentPages/TravelConcessions/TravelConcessions";
+import RAF from "./contentPages/RAF/RAF";
+import PassportAndMess from "./contentPages/Passport&Mess/Passport&Mess";
 import styles from "./Content.module.scss";
 import { useContext } from "react";
 import { ActivePageContext } from "../../assets/store/activePageContext";
@@ -22,6 +24,8 @@ export default function Content() {
       {activePage === "Dues" && <Dues />}
       {activePage === "Clubs" && <Clubs />}
       {activePage === "Travel Concessions" && <TravelConcessions />}
+      {activePage === "RAF" && <RAF />}
+      {activePage === "Passport & Mess" && <PassportAndMess />}
     </main>
   );
 }
