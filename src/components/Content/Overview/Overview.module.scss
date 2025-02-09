@@ -1,0 +1,53 @@
+@use "/src/assets/global" as *;
+
+.overview {
+  width: 100%;
+  font-family: "inter";
+
+  .contactDetails {
+    background-color: $themeBgColor;
+    padding: 20px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    p {
+      font-weight: 600;
+    }
+
+    .contactRow {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+
+      span {
+        font-weight: 500;
+      }
+
+      a {
+        color: $themeColor;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  .notice {
+    background-color: $themeBgColor;
+    padding: 20px 30px;
+    border-radius: 15px;
+    p {
+      margin: 5px 0;
+    }
+    .notEligible {
+      color: red;
+    }
+  }
+}

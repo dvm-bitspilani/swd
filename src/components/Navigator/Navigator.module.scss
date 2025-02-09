@@ -1,5 +1,18 @@
 @use "/src/assets/global" as *;
 
+@mixin box {
+  border: 1px solid $themeColor;
+  font-size: 16.8px;
+  font-family: "inter", sans-serif;
+  font-weight: 600;
+  padding: 16.5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s;
+}
+
 .navigator {
   display: flex;
   align-items: center;
@@ -23,5 +36,19 @@
   .forwardArrowSVG {
     width: 9px;
     height: 9px;
+  }
+
+  .item {
+    @include box;
+    background-color: $bodyColor;
+    color: $themeColor;
+    &:hover {
+    }
+  }
+
+  .activeItem {
+    @include box;
+    color: $bodyColor;
+    background-color: $themeColor;
   }
 }

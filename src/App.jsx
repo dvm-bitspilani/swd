@@ -1,23 +1,7 @@
-import styles from "./App.module.scss";
-import Header from "./components/Header/Header";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Content from "./components/Content/Content";
-import ActivePageContextProvider from "./assets/store/activePageContext";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
-function App() {
-  return (
-    <ActivePageContextProvider>
-      <div className={styles.pageWrapper}>
-        <Header />
-        <div className={styles.container}>
-          <div className={styles.mainContent}>
-            <Sidebar />
-            <Content />
-          </div>
-        </div>
-      </div>
-    </ActivePageContextProvider>
-  );
+export default function App() {
+  console.log(router);
+  return <RouterProvider router={router} />;
 }
-
-export default App;
