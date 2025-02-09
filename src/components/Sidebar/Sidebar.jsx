@@ -1,11 +1,11 @@
 import styles from "./Sidebar.module.scss";
-import { useContext} from "react";
-import { ActivePageContext } from "../../assets/store/activePageContext";
+import { useState } from "react";
 import homeBtn from "/svgs/homeBtn.svg";
 import pages from "/src/assets/Pages";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
-  const { activePage, setActivePage } = useContext(ActivePageContext);
+  const [activePage, setActivePage] = useState("Overview");
   const handleMenuItemClick = (name) => {
     setActivePage(name);
   };
@@ -17,20 +17,20 @@ export default function Sidebar() {
       </div>
       <div className={styles.menu}>
         {pages.map((item, index) => (
-          <div
+          <NavLink
             key={index}
-            className={
-              item.name === activePage
+            to={item.url}
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
                 ? styles.activeMenuItem
                 : styles.menuItem
             }
-            onClick={() => {
-              handleMenuItemClick(item.name);
-            }}
           >
             <img src={item.icon} alt={item.name} className={styles.menuIcon} />
             {item.name}
-          </div>
+          </NavLink>
         ))}
       </div>
     </nav>
