@@ -11,6 +11,162 @@
   min-height: fit-content;
 }
 
+$pink: #000000;
+$dark: #292b26;
+
+@keyframes line1animation {
+  0% {
+  }
+
+  25% {
+    rotate: 30deg;
+  }
+
+  80% {
+    rotate: -45deg;
+  }
+
+  100% {
+    translate: 0px 6px;
+    rotate: -45deg;
+  }
+}
+
+@keyframes line3animation {
+  0% {
+  }
+
+  25% {
+    rotate: -30deg;
+  }
+
+  80% {
+    rotate: 45deg;
+  }
+
+  100% {
+    translate: 0px -6px;
+    rotate: 45deg;
+  }
+}
+
+@keyframes line2animation {
+  0% {
+  }
+
+  25% {
+    translate: -5px 0px;
+  }
+
+  50% {
+    translate: 3px 0px;
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    translate: 3px 0px;
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes linesbarsanimation {
+  50% {
+    border: none;
+    border-radius: 50%;
+  }
+
+  66% {
+    border-right: rgb(0, 0, 0) solid 2px;
+    border-radius: 50%;
+  }
+
+  84% {
+    border-top: rgb(0, 0, 0) solid 2px;
+    border-bottom: rgb(0, 0, 0) solid 2px;
+    border-right: rgb(0, 0, 0) solid 2px;
+    border-radius: 50%;
+  }
+
+  100% {
+    border: rgb(0, 0, 0) solid 2px;
+    border-radius: 50%;
+  }
+}
+
+@keyframes line1animation-reverse {
+  0% {
+    translate: 0px 7px;
+    rotate: -45deg;
+  }
+  20% {
+    rotate: -45deg;
+  }
+  75% {
+    rotate: 30deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes line3animation-reverse {
+  0% {
+    translate: 0px -7px;
+    rotate: 45deg;
+  }
+  20% {
+    rotate: 45deg;
+  }
+  75% {
+    rotate: -30deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes line2animation-reverse {
+  0% {
+    translate: 5px 0px;
+    clip-path: inset(0 0 0 100%);
+  }
+  50% {
+    translate: 5px 0px;
+    clip-path: inset(0 0 0 0);
+  }
+  75% {
+    translate: -5px 0px;
+  }
+  100% {
+    translate: 0px 0px;
+  }
+}
+
+@keyframes linesbarsanimation-reverse {
+  0% {
+    border: rgb(0, 0, 0) solid 1px;
+    border-radius: 50%;
+  }
+  16% {
+    border-top: rgb(0, 0, 0) solid 1px;
+    border-bottom: rgb(0, 0, 0) solid 1px;
+    border-right: rgb(0, 0, 0) solid 1px;
+    border-left: none;
+    border-radius: 50%;
+  }
+  33% {
+    border-right: rgb(0, 0, 0) solid 1px;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 50%;
+  }
+  50% {
+    border: none;
+    border-radius: 50%;
+  }
+}
+
 .sidebar {
   width: 400px;
   display: flex;
@@ -30,6 +186,10 @@
     .homebtnIcon {
       scale: 0.75;
     }
+  }
+
+  .hamburgerContainer {
+    display: none;
   }
 
   .menu {
@@ -55,6 +215,117 @@
       color: white;
       .menuIcon {
         filter: invert(1);
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 68px;
+    .homebtn {
+      display: none;
+    }
+
+    .menuItem {
+      gap: 0px;
+    }
+    .itemName {
+      display: none;
+    }
+    .hamburgerContainer {
+      @include menuItem();
+      background-color: $themeBgColor;
+      color: #000000;
+      padding: 15px 22px;
+      height: 25px;
+
+      .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .linesbars {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 4px;
+          align-items: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          .line {
+            background-color: $pink;
+            width: 18px;
+            height: 2px;
+            border-radius: 4px;
+          }
+
+          .line1,
+          .line2,
+          .line3 {
+            transition: all 0.25s;
+          }
+        }
+
+        .line1 {
+          animation: line1animation-reverse 0.3s ease-in forwards;
+        }
+
+        .line3 {
+          animation: line3animation-reverse 0.3s ease-in forwards;
+        }
+
+        .line2 {
+          animation: line2animation-reverse 0.3s ease-in forwards;
+        }
+
+        .linesbars {
+          animation: linesbarsanimation-reverse 0.3s ease-in forwards;
+        }
+      }
+      .clicked {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .linesbars {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 4px;
+          align-items: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          .line {
+            background-color: $pink;
+            width: 18px;
+            height: 2px;
+            border-radius: 4px;
+          }
+
+          .line1,
+          .line2,
+          .line3 {
+            transition: all 0.25s;
+          }
+        }
+
+        .line1 {
+          animation: line1animation 0.3s ease-in forwards;
+        }
+
+        .line3 {
+          animation: line3animation 0.3s ease-in forwards;
+        }
+        .line2 {
+          animation: line2animation 0.3s ease-in forwards;
+        }
+
+        .linesbars {
+          animation: linesbarsanimation 0.3s ease-in forwards;
+        }
       }
     }
   }
