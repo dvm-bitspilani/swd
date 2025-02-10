@@ -1,0 +1,29 @@
+@use "/src/assets/global.scss" as *;
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 22.5px;
+  height: 100vh;
+
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .mainContent {
+      display: flex;
+      flex-grow: 1;
+
+      .content {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+    }
+  }
+}

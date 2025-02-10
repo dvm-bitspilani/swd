@@ -1,0 +1,86 @@
+@use "/src/assets/global.scss" as *;
+
+.uploadPhotoForIdCard {
+  font-family: "inter";
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .uploadPhoto {
+    padding: 25.5px 45px;
+    border-radius: 22.5px;
+    background-color: $themeBgColor;
+
+    .photoForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .title {
+        font-size: 18.75px;
+        color: $themeColor;
+        font-weight: 600;
+      }
+      .uploadPhotoContainer {
+        width: 300px;
+        .fileInput {
+          position: relative;
+          height: 30px;
+          width: 100%;
+          background: $inputBgColor;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+          justify-content: space-between;
+          cursor: pointer;
+
+          input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          .browseText {
+            color: #666;
+            font-size: 14px;
+          }
+
+          .plusIcon {
+            color: #666;
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .btnContainer {
+      .applyBtn {
+        width: 171.5px;
+        padding: 12px;
+      }
+    }
+  }
+
+  .info {
+    font-family: "inter";
+    padding: 25.5px 30px;
+    padding-top: 0px;
+    font-size: 18.75px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    ul {
+      padding-left: 30px;
+      li {
+        font-weight: 400;
+      }
+    }
+  }
+}

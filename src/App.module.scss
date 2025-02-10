@@ -7,24 +7,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-}
-
-.pageWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin: 22.5px;
-
-
-  .container {
-    display: flex;
-    width: 100%;
-
-    .mainContent {
-      display: flex;
-      flex-grow: 1;
-    }
-  }
+  background-color: $bodyColor;
+  font-family: sans-serif;
 }

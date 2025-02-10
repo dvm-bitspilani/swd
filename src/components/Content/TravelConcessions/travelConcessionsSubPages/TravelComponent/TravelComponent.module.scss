@@ -1,0 +1,100 @@
+@use "/src/assets/global.scss" as *;
+
+.infoText {
+  font-family: "inter";
+  padding: 25.5px 30px;
+  padding-top: 0px;
+  font-size: 18.75px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.travelComponent {
+  font-family: "inter";
+  padding: 25.5px 45px;
+  border-radius: 22.5px;
+  background-color: $themeBgColor;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  .formGroupContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+
+    .border {
+      border-right: 1px solid black;
+    }
+
+    .formGroup {
+      font-size: 19.9px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      width: 100%;
+      .label {
+        font-weight: 500;
+        width: 300px;
+      }
+      .select {
+        padding: 0px 10px;
+        font-size: 16.5px;
+        height: 30px;
+        width: 300px;
+        border: none;
+        border-radius: 4.5px;
+        background-color: $inputBgColor;
+        font-family: "inter";
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: $themeBgColor;
+    border: 2px solid #525252;
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: $themeColor;
+
+    &:checked {
+      appearance: auto;
+      background-color: $themeColor;
+    }
+  }
+
+  .checkBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 19.9px;
+    .checkBoxDiv {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background-color 0.2s;
+      padding: 5px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgba(26, 35, 126, 0.05);
+      }
+    }
+  }
+
+  .saveBtn {
+    width: 170px;
+  }
+}
