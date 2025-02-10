@@ -1,5 +1,11 @@
 import styles from "./Academics.module.scss";
 
+const data = {
+  year: "2024",
+  sem: "1-1",
+  cg: "7.2",
+};
+
 export default function Academics() {
   return (
     <div className={styles.academics}>
@@ -11,9 +17,9 @@ export default function Academics() {
             <th>CGPA</th>
           </tr>
           <tr className={styles.tableRow}>
-            <td className={styles.year}>2024</td>
-            <td className={styles.sem}>1-1</td>
-            <td className={styles.cg}>7.2</td>
+            <td className={styles.year}>{data.year}</td>
+            <td className={styles.sem}>{data.sem}</td>
+            <td className={styles.cg}>{data.cg}</td>
           </tr>
         </table>
       </div>
