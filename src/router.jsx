@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import React from "react";
 
 import Overview from "./components/Content/Overview/Overview";
@@ -33,29 +33,7 @@ import PSII from "./components/Content/TravelConcessions/travelConcessionsSubPag
 import PageStructure from "./PageStructure/PageStructure";
 import Pages from "/src/assets/Pages";
 
-const generateRoutes = (pages) => {
-  return pages.map((page, index) => ({
-    path: page.url,
-    element: React.createElement(getComponentByName(page.url)),
-    children:
-      page.subPages.length > 0
-        ? [
-            {
-              index: true,
-              element: React.createElement(
-                getComponentByName(page.subPages[0].url)
-              ),
-            },
-            ...page.subPages.map((subPage) => ({
-              path: subPage.url,
-              element: React.createElement(getComponentByName(subPage.url)),
-            })),
-          ]
-        : undefined,
-    ...(index === 0 && { index: true }),
-  }));
-};
-
+// Function to get the correct component by name
 const getComponentByName = (name) => {
   const componentMap = {
     overview: Overview,
@@ -86,11 +64,38 @@ const getComponentByName = (name) => {
   return componentMap[name] || (() => <div>Component not found</div>);
 };
 
+// Function to generate routes dynamically
+const generateRoutes = (pages) => {
+  return pages.map((page) => {
+    const hasSubPages = page.subPages?.length > 0;
+
+    return {
+      path: page.url,
+      element: React.createElement(getComponentByName(page.url)),
+      children: hasSubPages
+        ? [
+            {
+              index: true,
+              element: <Navigate to={page.subPages[0].url} replace />,
+            },
+            ...page.subPages.map((subPage) => ({
+              path: subPage.url,
+              element: React.createElement(getComponentByName(subPage.url)),
+            })),
+          ]
+        : undefined,
+    };
+  });
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <PageStructure />,
-    children: generateRoutes(Pages),
+    children: [
+      { index: true, element: <Navigate to={`/${Pages[0].url}`} replace /> },
+      ...generateRoutes(Pages),
+    ],
   },
 ]);
 

@@ -1,5 +1,16 @@
 @use "/src/assets/global.scss" as *;
 
+@keyframes logout {
+  0% {
+    opacity: 0;
+    transform: translate(7%, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(7%, 10px);
+  }
+}
+
 .header {
   background-color: $themeColor;
   color: white;
@@ -72,6 +83,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+      position: relative;
 
       .username {
         font-family: "EuropaGroteskMed";
@@ -84,16 +96,76 @@
         font-family: "EuropaGroteskReg";
         letter-spacing: 1px;
         justify-content: space-between;
-        align-items: start;
+        align-items: center;
         font-size: 19.5px;
-        gap: 20px;
+        gap: 15px;
 
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:hover .dropdownArrow {
+          cursor: pointer;
+          transform: translateY(0px);
+        }
         .dropdownArrow {
+          transform: translateY(-2px);
           width: 14px;
+          transition: transform 0.15s ease-in;
+        }
+
+        .activeDropdownArrow {
+          width: 14px;
+
+          rotate: 180deg;
+        }
+      }
+      .hoverInfo {
+        font-family: "inter", sans-serif;
+        font-weight: 600;
+        font-size: 18.75px;
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        transform: translate(7%, 10px);
+        width: 180px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 1px solid black;
+        padding: 4px;
+        z-index: 4;
+        color: #ed1c24;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        transition-delay: 0.1s;
+
+        .arrow {
+          position: absolute;
+          top: 0%;
+          right: 0%;
+          transform: translate(-100%, 50%);
+          rotate: 90deg;
+        }
+        .msg {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 19px;
+          border-radius: 10px;
+          gap: 5px;
+          .power {
+            scale: 0.75;
+          }
           &:hover {
+            background-color: #e1e1e1;
             cursor: pointer;
           }
         }
+      }
+      .activeHover {
+        display: block;
+        animation: logout 0.3s ease-in forwards;
       }
     }
   }

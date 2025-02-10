@@ -4,7 +4,7 @@ import forwardArrow from "/svgs/forwardArrow.svg";
 import Pages from "/src/assets/Pages";
 import { NavLink } from "react-router-dom";
 
-export default function Navigator({ url }) {
+export default function Navigator({ url = "overview" }) {
   const activePage = Pages.find((ele) => ele.url === url);
   return (
     <div className={styles.navigator}>

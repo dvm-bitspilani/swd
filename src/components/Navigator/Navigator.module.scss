@@ -5,12 +5,13 @@
   font-size: 16.8px;
   font-family: "inter", sans-serif;
   font-weight: 600;
-  padding: 16.5px;
-  border-radius: 12px;
+  padding: 12px 16.5px;
+  border-radius: 13.5px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.25s;
+  min-width: 150px;
 }
 
 .navigator {
@@ -42,6 +43,7 @@
     @include box;
     background-color: $bodyColor;
     color: $themeColor;
+
     &:hover {
     }
   }
