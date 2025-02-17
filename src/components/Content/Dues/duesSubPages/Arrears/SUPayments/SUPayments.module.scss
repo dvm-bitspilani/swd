@@ -1,0 +1,98 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+  background-color: $themeBgColor;
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  font-family: "Inter";
+
+  .header {
+    padding: 15px;
+    color: $themeColor;
+    font-size: 19.8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5px;
+
+    .recNO {
+      font-size: 14px;
+      color: #525252;
+      position: absolute;
+      right: 15px;
+    }
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+    padding: 0 15px;
+
+    .tab {
+      border: 1px solid $themeColor;
+      font-size: 16.8px;
+      font-family: "inter", sans-serif;
+      font-weight: 600;
+      padding: 12px 16.5px;
+      border-radius: 13.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.25s;
+      min-width: 150px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        color: $bodyColor;
+        background-color: $themeColor;
+      }
+
+      &:not(.active) {
+        background-color: $bodyColor;
+        color: $themeColor;
+      }
+    }
+  }
+
+  .table {
+    th {
+      background-color: $tableHeaderBgColor;
+      font-weight: 600;
+      color: $themeColor;
+      &:first-child {
+        border-top-left-radius: 4.5px;
+      }
+      &:last-child {
+        border-top-right-radius: 4.5px;
+      }
+    }
+
+    td {
+      background-color: white;
+
+      &:first-child {
+        color: $themeColor;
+        font-weight: 600;
+      }
+    }
+
+    .headerRow {
+      .headerCell {
+        padding: 12px;
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+    .cell {
+      padding: 12px;
+      text-align: center;
+    }
+  }
+}

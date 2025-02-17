@@ -1,0 +1,86 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+  background-color: $themeBgColor;
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  font-family: "Inter";
+
+  .header {
+    padding: 15px;
+    text-align: center;
+    color: $themeColor;
+    font-size: 19.8px;
+    font-weight: 600;
+  }
+
+  .table {
+    th {
+      background-color: $tableHeaderBgColor;
+      font-weight: 600;
+      color: $themeColor;
+      &:first-child {
+        border-top-left-radius: 4.5px;
+      }
+      &:last-child {
+        border-top-right-radius: 4.5px;
+      }
+    }
+
+    td {
+      background-color: white;
+
+      &:first-child {
+        color: $themeColor;
+        font-weight: 600;
+      }
+    }
+
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      .info{
+        height: 15px;
+        width: 15px;
+        
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.notes {
+  font-size: 14.6px;
+  margin: 10px 0;
+  padding: 0 15px;
+
+  .note {
+    margin: 5px 0;
+  }
+  .importantNote {
+    color: #ed1c24;
+    display: flex;
+    align-items: center;
+
+    .svgMask {
+      margin-left: 5px;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      -webkit-mask-image: url("/public/svgs/forwardArrow.svg");
+      mask-image: url("/public/svgs/forwardArrow.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
