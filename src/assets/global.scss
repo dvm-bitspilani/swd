@@ -17,3 +17,24 @@ $tableHeaderBgColor: #ffe17f;
 $tableBorderColor: #ea9830;
 $hoverStateColor: #b3b3b3;
 $bodyColor: #efefef;
+$checkbox-bg: url("/public/svgs/Checkbox.svg");
+
+
+:root {
+  --borderRadius: 18px;
+  --mainContentPadding: 18px;
+  --mainContentGap: 20px;
+}
+@media screen and (max-height: 800px) {
+  :root {
+    --mainContentGap: 17px;
+    --mainContentPadding: 16px;
+  }
+}
+@media screen and (max-height: 700px) {
+  :root {
+    --mainContentGap: 12px;
+    --mainContentPadding: 12px;
+  }
+  
+}

@@ -5,10 +5,6 @@ import pages from "/src/assets/Pages";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
-  const [activePage, setActivePage] = useState("Overview");
-  const handleMenuItemClick = (name) => {
-    setActivePage(name);
-  };
   return (
     <nav className={styles.sidebar}>
       <div className={styles.homebtn}>

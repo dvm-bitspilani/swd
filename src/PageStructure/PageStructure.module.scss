@@ -3,27 +3,20 @@
 .pageWrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
-  padding: 22.5px;
-  height: 100vh;
 
-  .container {
+  .mainContent {
     display: flex;
+    flex-grow: 1;
     width: 100%;
     height: 100%;
 
-    .mainContent {
+    .content {
+      padding: var(--mainContentPadding) var(--mainContentPadding) var(--mainContentPadding) 0;
       display: flex;
-      flex-grow: 1;
-
-      .content {
-        padding-left: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-      }
+      flex-direction: column;
+      gap: var(--mainContentGap);
+      width: 100%;
     }
   }
 }

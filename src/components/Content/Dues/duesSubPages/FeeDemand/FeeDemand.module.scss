@@ -2,7 +2,7 @@
 
 .mainText {
   background-color: $themeBgColor;
-  border-radius: 22.5px;
+  border-radius: var(--borderRadius);
   display: flex;
   justify-content: center;
   align-items: center;

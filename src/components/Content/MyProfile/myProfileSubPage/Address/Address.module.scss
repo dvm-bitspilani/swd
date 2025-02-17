@@ -11,7 +11,7 @@
   background-color: $themeBgColor;
   @include flexCenter;
   padding: 25.5px 45px;
-  border-radius: 22.5px;
+  border-radius: var(--borderRadius);
   gap: 28.5px;
   font-family: "inter", sans-serif;
   font-size: 19.9px;

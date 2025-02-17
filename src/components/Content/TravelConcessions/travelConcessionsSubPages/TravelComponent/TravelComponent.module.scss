@@ -14,7 +14,7 @@
 .travelComponent {
   font-family: "inter";
   padding: 25.5px 45px;
-  border-radius: 22.5px;
+  border-radius: var(--borderRadius);
   background-color: $themeBgColor;
   display: flex;
   flex-direction: column;
@@ -57,11 +57,12 @@
   }
 
   input[type="checkbox"] {
+    box-sizing: border-box;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: $themeBgColor;
-    border: 2px solid #525252;
+    border: 1.5px solid #525252;
     border-radius: 4px;
     width: 16px;
     height: 16px;
@@ -69,8 +70,9 @@
     accent-color: $themeColor;
 
     &:checked {
-      appearance: auto;
-      background-color: $themeColor;
+      border: none;
+      background: $checkbox-bg no-repeat center center /
+        120%;
     }
   }
 
@@ -80,6 +82,7 @@
     align-items: center;
     gap: 8px;
     font-size: 19.9px;
+
     .checkBoxDiv {
       display: flex;
       align-items: center;

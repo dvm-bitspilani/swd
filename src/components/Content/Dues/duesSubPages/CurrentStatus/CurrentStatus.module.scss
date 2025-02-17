@@ -2,7 +2,7 @@
 
 .container {
   background-color: $themeBgColor;
-  border-radius: 22.5px;
+  border-radius: var(--borderRadius);
   padding: 20px;
   font-family: "Inter";
 
