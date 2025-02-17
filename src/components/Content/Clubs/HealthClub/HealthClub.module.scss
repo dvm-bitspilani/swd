@@ -5,7 +5,7 @@
 
   .card {
     background-color: $themeBgColor;
-    border-radius: 22.5px;
+    border-radius: var(--borderRadius);
     padding: 25.5px 45px;
     margin-bottom: 24px;
     font-size: 18px;
@@ -32,11 +32,9 @@
 
     .formGroup {
       display: flex;
-      // gap: 10px;
-      flex-wrap: wrap;
+      gap: 20px;
 
       .selectGroup {
-        flex: 1;
 
         label {
           margin-right: 10px;
@@ -91,8 +89,9 @@
           accent-color: $themeColor;
 
           &:checked {
-            appearance: auto;
-            background-color: $themeColor;
+            background: $checkbox-bg no-repeat center
+              center/120%;
+            border: none;
           }
         }
       }

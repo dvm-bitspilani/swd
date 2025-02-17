@@ -9,17 +9,25 @@
   border-radius: 16px;
   height: 25px;
   min-height: fit-content;
+
+  @media screen and (max-height: 800px) {
+    padding: 9px;
+  }
+  @media screen and (max-height: 700px) {
+    padding: 6px;
+  }
 }
 
 .sidebar {
   width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  font-family: "Inter";
-  font-weight: 400;
+  gap: var(--mainContentGap);
+  font: 400 18.75px "Inter";
   cursor: default;
   user-select: none;
+  padding: var(--mainContentPadding) var(--mainContentPadding) 0
+    var(--mainContentPadding);
 
   .homebtn {
     @include menuItem;
@@ -55,6 +63,46 @@
       color: white;
       .menuIcon {
         filter: invert(1);
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .sidebar {
+    font-size: 15px;
+
+    .homebtn {
+      padding: 13px 20px;
+      .homebtnIcon {
+        scale: 0.65;
+      }
+    }
+
+    .menu {
+      padding: 10px;
+      .menuIcon {
+        scale: 0.65;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .sidebar {
+    font-size: 14px;
+
+    .homebtn {
+      padding: 11px 18px;
+      .homebtnIcon {
+        scale: 0.6;
+      }
+    }
+
+    .menu {
+      padding: 8px;
+      .menuIcon {
+        scale: 0.6;
       }
     }
   }

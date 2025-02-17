@@ -11,14 +11,12 @@ export default function PageStructure() {
   return (
     <div className={styles.pageWrapper}>
       <Header />
-      <div className={styles.container}>
-        <div className={styles.mainContent}>
-          <Sidebar />
-          <main className={styles.content}>
-            <Navigator url={pathSegments[0]} />
-            <Outlet />
-          </main>
-        </div>
+      <div className={styles.mainContent}>
+        <Sidebar />
+        <main className={styles.content}>
+          <Navigator url={pathSegments[0]} />
+          <Outlet />
+        </main>
       </div>
     </div>
   );

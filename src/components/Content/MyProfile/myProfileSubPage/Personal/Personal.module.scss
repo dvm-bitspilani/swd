@@ -3,7 +3,7 @@
 .personal {
   gap: 5px;
   padding: 25.5px 45px;
-  border-radius: 22.5px;
+  border-radius: var(--borderRadius);
   background-color: $themeBgColor;
   font-family: "Inter";
   display: grid;

@@ -8,7 +8,7 @@
 
   .selectCertificate {
     padding: 25.5px 45px;
-    border-radius: 22.5px;
+    border-radius: var(--borderRadius);
     background-color: $themeBgColor;
 
     .certificateForm {
@@ -48,7 +48,7 @@
   }
   .prevApplied {
     padding: 25.5px 45px;
-    border-radius: 22.5px;
+    border-radius: var(--borderRadius);
     background-color: $themeBgColor;
     display: flex;
     flex-direction: column;
