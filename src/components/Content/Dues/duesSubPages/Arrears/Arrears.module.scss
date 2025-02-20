@@ -1,0 +1,7 @@
+@use "/src/assets/global.scss" as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -6,26 +6,24 @@
   padding: 20px;
   font-family: "Inter";
 
-  .title {
+  .header {
+    padding: 15px;
     color: $themeColor;
-    text-align: center;
-    margin: 0 0 15px 0;
-    font-size: 19.9px;
+    font-size: 19.8px;
     font-weight: 600;
-  }
-
-  .dueDate {
-    margin: 0 0 20px 0;
-    font-size: 18px;
-
-    .date {
-      color: $themeColor;
-      font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .recNO{
+      font-size: 14px;
+      color: #525252;
+      position: absolute;
+      right: 15px;
     }
   }
 
-  .tableWrapper {
-
+  .table {
     th {
       background-color: $tableHeaderBgColor;
       font-weight: 600;
@@ -47,24 +45,16 @@
       }
     }
 
-    .latestBalance {
-      td {
-        font-weight: 700;
-
-        &:first-child {
-          border-bottom-left-radius: 4.5px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 4.5px;
-          font-weight: 600;
-        }
+    .headerRow {
+      .headerCell {
+        padding: 12px;
+        text-align: center;
+        font-weight: 600;
       }
     }
+    .cell {
+      padding: 12px;
+      text-align: center;
+    }
   }
-}
-
-.note {
-  margin-left: 30px;
-  font-size: 14.6px;
 }

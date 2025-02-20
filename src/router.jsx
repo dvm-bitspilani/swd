@@ -21,6 +21,7 @@ import MCN from "./components/Content/Scholarships/scholarshipsSubPage/MCN/MCN";
 import Gate from "./components/Content/Scholarships/scholarshipsSubPage/Gate/Gate";
 
 import Dues from "./components/Content/Dues/Dues";
+import Arrears from "./components/Content/Dues/duesSubPages/Arrears/Arrears";
 import Deposits from "./components/Content/Dues/duesSubPages/Deposits/Deposits";
 import CurrentStatus from "./components/Content/Dues/duesSubPages/CurrentStatus/CurrentStatus";
 import FeeDemand from "./components/Content/Dues/duesSubPages/FeeDemand/FeeDemand";
@@ -53,6 +54,7 @@ const getComponentByName = (name) => {
     "mcn-ps-i": MCN,
     gate: Gate,
     dues: Dues,
+    arrears: Arrears,
     deposits: Deposits,
     "current-status": CurrentStatus,
     "fee-demand": FeeDemand,
