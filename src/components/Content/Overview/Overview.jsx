@@ -10,21 +10,21 @@ export default function Overview() {
           <span>For fee related query:</span>
           <a href="mailto:fees.swd@pilani.bits-pilani.ac.in">
             <img src={mail} alt="mailSVG" />
-            fees.swd@pilani.bits-pilani.ac.in
+            <p>fees.swd@pilani.bits-pilani.ac.in</p>
           </a>
         </div>
         <div className={styles.contactRow}>
           <span>For scholarship related query:</span>
           <a href="mailto:scholarship.swd@pilani.bits-pilani.ac.in">
             <img src={mail} alt="mailSVG" />
-            scholarship.swd@pilani.bits-pilani.ac.in
+            <p>scholarship.swd@pilani.bits-pilani.ac.in</p>
           </a>
         </div>
         <div className={styles.contactRow}>
           <span>For any other query:</span>
           <a href="mailto:swd@pilani.bits-pilani.ac.in">
             <img src={mail} alt="mailSVG" />
-            swd@pilani.bits-pilani.ac.in
+            <p>swd@pilani.bits-pilani.ac.in</p>
           </a>
         </div>
       </section>
