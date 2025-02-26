@@ -1,5 +1,4 @@
 import styles from "./Sidebar.module.scss";
-import { useState } from "react";
 import homeBtn from "/svgs/homeBtn.svg";
 import pages from "/src/assets/Pages";
 import { NavLink } from "react-router-dom";

@@ -10,10 +10,10 @@
   height: 25px;
   min-height: fit-content;
 
-  @media screen and (max-height: 800px) {
-    padding: 9px;
+  @media screen and (max-height: 835px), (max-width: 920px) {
+    padding: 7px;
   }
-  @media screen and (max-height: 700px) {
+  @media screen and (max-height: 726px), (max-width: 790px) {
     padding: 6px;
   }
 }
@@ -45,16 +45,13 @@
     background-color: $themeBgColor;
     padding: 12px;
     height: fit-content;
+
     .menuItem {
       @include menuItem;
       color: #000000;
-    }
-    .menuIcon {
-      scale: 0.75;
-    }
-
-    .menuItem:hover {
-      background-color: $hoverStateColor;
+      &:hover {
+        background-color: $hoverStateColor;
+      }
     }
 
     .activeMenuItem {
@@ -65,44 +62,61 @@
         filter: invert(1);
       }
     }
+
+    .menuIcon {
+      scale: 0.75;
+      margin-top: 3px;
+    }
   }
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 835px), (max-width: 920px) {
   .sidebar {
-    font-size: 15px;
-
     .homebtn {
       padding: 13px 20px;
       .homebtnIcon {
-        scale: 0.65;
+        // scale: 0.65;
       }
     }
 
     .menu {
       padding: 10px;
       .menuIcon {
+        // scale: 0.65;
+      }
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .sidebar {
+    font-size: 15px;
+    width: 340px;
+    .homebtn {
+      .homebtnIcon {
+        scale: 0.65;
+      }
+    }
+    .menu {
+      .menuIcon {
         scale: 0.65;
       }
     }
   }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 726px), (max-width: 790px) {
   .sidebar {
-    font-size: 14px;
-
     .homebtn {
       padding: 11px 18px;
       .homebtnIcon {
-        scale: 0.6;
+        // scale: 0.6;
       }
     }
 
     .menu {
       padding: 8px;
       .menuIcon {
-        scale: 0.6;
+        // scale: 0.6;
       }
     }
   }
