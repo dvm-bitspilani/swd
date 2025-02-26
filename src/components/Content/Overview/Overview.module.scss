@@ -3,6 +3,7 @@
 .overview {
   width: 100%;
   font-family: "inter";
+  font-size: 1rem;
 
   .contactDetails {
     background-color: $themeBgColor;
@@ -34,6 +35,10 @@
         img {
           width: 18px;
           height: 18px;
+          // margin-right: 8px;
+        }
+        p {
+          font-weight: 400;
         }
       }
     }
@@ -48,6 +53,40 @@
     }
     .notEligible {
       color: red;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .overview {
+    font-size: 0.8rem;
+    .contactDetails {
+      padding: 20px;
+    }
+    .notice {
+      padding: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .overview {
+    // font-size: 0.7rem;
+    .contactDetails {
+      padding: 20px 15px;
+      .contactRow:nth-child(3) {
+        a {
+          p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 175px;
+          }
+        }
+      }
+    }
+    .notice {
+      padding: 20px 15px;
     }
   }
 }
