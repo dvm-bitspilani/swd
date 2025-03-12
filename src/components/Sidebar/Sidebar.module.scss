@@ -34,7 +34,7 @@
     background-color: $themeBgColor;
     color: #000000;
     padding: 15px 22px;
-    height: fit-content;
+    height: 50px;
     .homebtnIcon {
       scale: 0.75;
     }
@@ -74,16 +74,10 @@
   .sidebar {
     .homebtn {
       padding: 13px 20px;
-      .homebtnIcon {
-        // scale: 0.65;
-      }
     }
 
     .menu {
       padding: 10px;
-      .menuIcon {
-        // scale: 0.65;
-      }
     }
   }
 }
@@ -108,16 +102,10 @@
   .sidebar {
     .homebtn {
       padding: 11px 18px;
-      .homebtnIcon {
-        // scale: 0.6;
-      }
     }
 
     .menu {
       padding: 8px;
-      .menuIcon {
-        // scale: 0.6;
-      }
     }
   }
 }

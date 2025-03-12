@@ -17,7 +17,7 @@ export default function Navigator({ url = "overview" }) {
         alt="forwardArrowSVG"
         className={styles.forwardArrowSVG}
       />
-      <p>{activePage.name}</p>
+      <a>{activePage.name}</a>
       {activePage.subPages.length > 0 && (
         <>
           <img
