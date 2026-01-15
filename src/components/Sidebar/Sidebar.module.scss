@@ -9,6 +9,7 @@
   border-radius: 16px;
   height: 25px;
   min-height: fit-content;
+  height: fit-content;
 
   @media screen and (max-height: 835px), (max-width: 920px) {
     padding: 7px;
@@ -26,8 +27,7 @@
   font: 400 18.75px "Inter";
   cursor: default;
   user-select: none;
-  padding: var(--mainContentPadding) var(--mainContentPadding) 0
-    var(--mainContentPadding);
+  padding: var(--mainContentPadding);
 
   .homebtn {
     @include menuItem;
@@ -47,8 +47,8 @@
     height: fit-content;
 
     .menuItem {
-      @include menuItem;
       color: #000000;
+      @include menuItem;
       &:hover {
         background-color: $hoverStateColor;
       }
@@ -63,9 +63,14 @@
       }
     }
 
-    .menuIcon {
-      scale: 0.75;
-      margin-top: 3px;
+    .icon{
+      width:30px;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      .menuIcon {
+        scale: 0.75;
+      }
     }
   }
 }
