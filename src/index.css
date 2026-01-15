@@ -1,5 +1,3 @@
-@use "/src/assets/global" as *;
-
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +5,6 @@
 }
 
 body {
-  background-color: $bodyColor;
+  background-color:; #efefef;
   font-family: sans-serif;
 }
