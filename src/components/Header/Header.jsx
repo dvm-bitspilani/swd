@@ -7,7 +7,7 @@ import icon from "/icon.jpg";
 import { useState } from "react";
 
 export default function Header({
-  name = "Chita swamy",
+  name = "Chitanda swamy",
   id = "2024B3A70921P",
 }) {
   const [isDropdownActive, setIsDropdownActive] = useState(false);
@@ -53,6 +53,10 @@ export default function Header({
             }
           >
             <img className={styles.arrow} src={triangle} alt="trinagle" />
+            <div className={styles.mobileUserDetails}>
+              <p className={styles.mobileName}>{name}</p>
+              <p className={styles.mobileId}>{id}</p>
+            </div>
             <div className={styles.msg}>
               <img className={styles.power} src={power} alt="logout" />
               Logout

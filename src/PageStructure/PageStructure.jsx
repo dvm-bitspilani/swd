@@ -14,8 +14,12 @@ export default function PageStructure() {
       <div className={styles.mainContent}>
         <Sidebar />
         <main className={styles.content}>
-          <Navigator url={pathSegments[0]} />
-          <Outlet />
+          <div className={styles.headerContainer}>
+            <Navigator url={pathSegments[0]} />
+          </div>
+          <div className={styles.scrollContainer}>
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>
