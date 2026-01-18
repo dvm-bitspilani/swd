@@ -11,10 +11,13 @@
   min-height: fit-content;
   height: fit-content;
 
-  @media screen and (max-height: 835px), (max-width: 920px) {
+  @media screen and (max-height: 835px),
+  (max-width: 920px) {
     padding: 7px;
   }
-  @media screen and (max-height: 726px), (max-width: 790px) {
+
+  @media screen and (max-height: 726px),
+  (max-width: 790px) {
     padding: 6px;
   }
 }
@@ -35,6 +38,7 @@
     color: #000000;
     padding: 15px 22px;
     height: fit-content;
+
     .homebtnIcon {
       scale: 0.75;
     }
@@ -49,6 +53,7 @@
     .menuItem {
       color: #000000;
       @include menuItem;
+
       &:hover {
         background-color: $hoverStateColor;
       }
@@ -58,16 +63,18 @@
       @include menuItem;
       background-color: $themeColor;
       color: white;
+
       .menuIcon {
         filter: invert(1);
       }
     }
 
-    .icon{
-      width:30px;
+    .icon {
+      width: 30px;
       display: flex;
-      align-items:center;
-      justify-content:center;
+      align-items: center;
+      justify-content: center;
+
       .menuIcon {
         scale: 0.75;
       }
@@ -75,10 +82,12 @@
   }
 }
 
-@media screen and (max-height: 835px), (max-width: 920px) {
+@media screen and (max-height: 835px),
+(max-width: 920px) {
   .sidebar {
     .homebtn {
       padding: 13px 20px;
+
       .homebtnIcon {
         // scale: 0.65;
       }
@@ -86,21 +95,25 @@
 
     .menu {
       padding: 10px;
+
       .menuIcon {
         // scale: 0.65;
       }
     }
   }
 }
+
 @media screen and (max-width: 920px) {
   .sidebar {
     font-size: 15px;
     width: 340px;
+
     .homebtn {
       .homebtnIcon {
         scale: 0.65;
       }
     }
+
     .menu {
       .menuIcon {
         scale: 0.65;
@@ -109,10 +122,14 @@
   }
 }
 
-@media screen and (max-height: 726px), (max-width: 790px) {
+@media screen and (max-height: 726px),
+(max-width: 790px) {
   .sidebar {
+
+    // Keep padding overrides if useful or merge
     .homebtn {
       padding: 11px 18px;
+
       .homebtnIcon {
         // scale: 0.6;
       }
@@ -120,9 +137,106 @@
 
     .menu {
       padding: 8px;
+
       .menuIcon {
         // scale: 0.6;
       }
     }
+  }
+}
+
+// ==========================================
+// MOBILE IMPLEMENTATION (Sliding Tab Layout)
+// ==========================================
+
+// Global Mobile Elements (Hidden on Desktop)
+.mobileToggle {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+
+  // Sidebar Container - Drawer Logic
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    // Fit Content + Min Width
+    width: fit-content;
+    min-width: 50vw;
+
+    background-color: $themeBgColor;
+    z-index: 1001;
+
+    // Hidden state (Off-screen)
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    padding-top: 80px;
+    padding-right: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+    // Ensure the absolute positioned button is visible
+    // overflow: visible; // Removed
+    border-radius: 0;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    // ----------------------------------------
+    // Mobile Overrides for Content
+    // ----------------------------------------
+
+    .homebtn {
+      font-weight: 600;
+      font-size: 22px;
+
+      .homebtnIcon {
+        scale: 1;
+      }
+    }
+
+    .menu {
+      padding: 0;
+
+      .menuItem {
+        padding: 15px 10px;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .activeMenuItem {
+        padding: 15px 10px;
+      }
+    }
+
+    // ----------------------------------------
+    // SLIDING TAB LOGIC REMOVED
+    // Button is now in Navigator
+    // ----------------------------------------
+  }
+
+  // Backdrop
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(2px);
   }
 }

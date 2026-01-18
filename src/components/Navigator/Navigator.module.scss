@@ -22,6 +22,8 @@
   padding-left: 22px;
   font-family: "Inter";
   min-height: fit-content;
+  flex-shrink: 0;
+
 
   a {
     color: black;
@@ -34,6 +36,7 @@
       height: 18px;
     }
   }
+
   .forwardArrowSVG {
     width: 9px;
     height: 9px;
@@ -49,5 +52,69 @@
     @include box;
     color: $bodyColor;
     background-color: $themeColor;
+  }
+}
+
+// Mobile Toggle Button Styles
+.mobileNavToggle {
+  display: none; // Hidden on desktop
+}
+
+@media screen and (max-width: 790px) {
+  .navigator {
+    padding-left: 20px;
+  }
+
+  .mobileNavToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    // Normal flow when closed
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin: 0;
+    margin-right: 15px; // spacing
+    flex-shrink: 0;
+
+    background-color: #d9d9d9;
+    border: 2px solid $themeColor;
+
+    border-radius: 8px;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 2.5px;
+      background-color: #000;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    &.open {
+      // Moves to top-left overlay position when open
+      position: fixed;
+      top: 25px;
+      left: 20px;
+      z-index: 2005; // Ensure above everything
+      margin: 0;
+
+      span:nth-child(1) {
+        transform: translateY(7.25px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7.25px) rotate(-45deg);
+      }
+    }
   }
 }

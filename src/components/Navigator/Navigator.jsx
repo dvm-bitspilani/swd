@@ -3,11 +3,25 @@ import globe from "/svgs/globe.svg";
 import forwardArrow from "/svgs/forwardArrow.svg";
 import Pages from "/src/assets/Pages";
 import { NavLink } from "react-router-dom";
+import { useSidebar } from "/src/assets/SidebarContext";
 
 export default function Navigator({ url = "overview" }) {
   const activePage = Pages.find((ele) => ele.url === url);
+  const { toggleSidebar, isOpen } = useSidebar();
+
   return (
     <div className={styles.navigator}>
+      {/* Mobile Hamburger Button */}
+      <button
+        className={`${styles.mobileNavToggle} ${isOpen ? styles.open : ''}`}
+        onClick={toggleSidebar}
+        aria-label="Toggle Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <a href="#">
         <img src={globe} alt="globeSVG" />
         SWD
@@ -34,8 +48,8 @@ export default function Navigator({ url = "overview" }) {
                   isPending
                     ? "pending"
                     : isActive
-                    ? styles.activeItem
-                    : styles.item
+                      ? styles.activeItem
+                      : styles.item
                 }
               >
                 {subPage.name}
