@@ -18,7 +18,13 @@ export default function Header({
         <img src={bitsLogo} alt="BITS Pilani Logo" className={styles.logo} />
         <div className={styles.campusDetails}>
           <h1 className={styles.title}>BITS Pilani</h1>
-          <p className={styles.campus}>Pilani Campus</p>
+          <p className={styles.campus}>
+            <span className={styles.mobileSwdFull}>
+              Student Welfare Division,{" "}
+            </span>
+            <span className={styles.mobileSwdShort}>SWD, </span>
+            Pilani Campus
+          </p>
         </div>
       </div>
       <h1 className={styles.pageTitle}>Student Welfare Division</h1>

@@ -58,6 +58,12 @@
         height: fit-content;
         letter-spacing: 1px;
         text-align: center;
+        white-space: nowrap; // Prevent wrapping to keep layout clean if possible
+
+        .mobileSwdFull,
+        .mobileSwdShort {
+          display: none; // Hidden on Desktop
+        }
       }
     }
   }
@@ -152,15 +158,8 @@
           rotate: 90deg;
 
           @media screen and (max-width: 790px) {
-            right: 18px; // Align with the center of the 35px button (approx)
-            top: -6px; // Move up to touch the button
-            transform: rotate(0deg); // Point up
-            // Note: The triangle SVG orientation determines rotation.
-            // If default is 90deg (pointing left/right?), user said "arrow image is not align".
-            // Assuming triangle.svg points up by default? Or right?
-            // Existing is rotate 90.
-            // Let's assume we need to shift it right.
-            transform: translate(-20%, -40%) rotate(0deg);
+            right: 20px;
+            top: 0px;
           }
         }
 
@@ -303,6 +302,27 @@
 
         .campus {
           font-size: 14px;
+          display: flex;
+          align-items: center;
+
+          .mobileSwdFull {
+            display: inline; // Show Full on Mobile
+          }
+
+          .mobileSwdShort {
+            display: none;
+          }
+
+          // Breakpoint for collision prevention (switch to SWD)
+          @media screen and (max-width: 450px) {
+            .mobileSwdFull {
+              display: none;
+            }
+
+            .mobileSwdShort {
+              display: inline;
+            }
+          }
         }
       }
     }
@@ -324,6 +344,7 @@
       }
 
       .userDetails {
+        gap: 0px;
 
         // HIDE Desktop Name and ID text
         .username {
