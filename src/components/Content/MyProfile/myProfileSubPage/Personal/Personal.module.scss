@@ -1,43 +1,109 @@
 @use "/src/assets/global.scss" as *;
 
 .personal {
-  gap: 5px;
-  padding: 25.5px 45px;
-  border-radius: var(--borderRadius);
-  background-color: $themeBgColor;
-  font-family: "Inter";
   display: grid;
+  grid-template-areas:
+    "left right"
+    "button button";
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  font-family: "Inter", sans-serif;
+  color: #333; // Default text color, adjust if needed based on variable
 
-  .section {
+  .leftColumn {
+    grid-area: left;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 30px;
+  }
+
+  .rightColumn {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .section {
+    background-color: #d9d9d9; // Grayish background matched from General page
+    border-radius: 15px; // Matched from General page
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
     .title {
-      font-weight: 600;
-      font-size: 18px;
+      font-weight: 700;
+      font-size: 16px; // Slightly larger for title
+      color: $themeColor; // Assuming themeColor is dark blue/primary
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 5px;
     }
+
     .details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
       .row {
         display: flex;
-        font-size: 16.5px;
+        align-items: flex-start;
+        font-size: 14px; // Requested font size
         font-weight: 400;
+
         .label {
-          width: 170px;
-          color: $themeColor;
+          min-width: 180px; // Fixed width for labels alignment
           font-weight: 500;
+          color: #333;
+        }
+
+        .value {
+          color: $themeColor; // Blue color for values as seen in image
+          font-weight: 500;
+          flex: 1;
         }
       }
     }
   }
+
   .buttonContainer {
-    grid-row: inherit;
-    grid-column: 1/3;
-    align-self: center;
-    justify-self: center;
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
     .changeBtn {
-      width: 181.5px;
+      width: 180px;
+      // Button styles usually come from the component, but ensuring alignment
+    }
+  }
+
+  // Responsiveness
+  @media (max-width: 1400px) {
+    grid-template-areas:
+      "left"
+      "right"
+      "button";
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 790px) {
+    padding: 15px;
+    gap: 20px;
+
+    .section {
+      padding: 15px;
+
+      .details .row {
+        flex-direction: row; // Keep row layout if it fits, or wrap?
+        // The request said "make everything horizontal in around 1400" which implies keeping the label/value side-by-side usually.
+        // But on very small screens, 180px label might be too wide.
+
+        .label {
+          min-width: 140px; // Reduce label width on mobile
+        }
+      }
     }
   }
 }

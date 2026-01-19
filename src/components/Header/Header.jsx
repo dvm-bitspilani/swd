@@ -64,7 +64,7 @@ export default function Header({
               <p className={styles.mobileId}>{id}</p>
             </div>
             <div className={styles.msg}>
-              <img className={styles.power} src={power} alt="logout" />
+              <img className={styles.power} src={power} f alt="logout" />
               Logout
             </div>
           </div>

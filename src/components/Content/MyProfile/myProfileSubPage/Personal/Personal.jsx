@@ -1,83 +1,79 @@
 import styles from "./Personal.module.scss";
 import Button from "/src/UI/Button/Button";
 
-const sections = [
-  {
-    title: "Personal Details",
-    details: [
-      { name: "Date of Birth", value: "ab-cd-20xx" },
-      { name: "Nationality", value: "Indian" },
-      { name: "Category", value: "General" },
-      { name: "Aadhaar No.", value: "1234 1234 1234 1234" },
-      { name: "Blood Group", value: "AB+" },
-      { name: "Allergies", value: "NA" },
-      { name: "Chronic Diseases", value: "NA" },
-    ],
-  },
-  {
-    title: "Fee Paying Guardian Details",
-    details: [
-      { name: "Name", value: "Name" },
-      { name: "Personal Phone No.", value: "+91 xxxxxxxxxx" },
-      { name: "Alternate Email ID", value: "abc@gmail.com" },
-      { name: "Education Loan", value: "NA" },
-    ],
-  },
-  {
-    title: "Father's Details",
-    details: [
-      { name: "Name", value: "Name" },
-      { name: "Profession", value: "Profession" },
-      { name: "Income / Year", value: "xxxxxx" },
-      { name: "Mobile No.", value: "+91 xxxxxxxxxx" },
-      { name: "Email ID", value: "father@gmail.com" },
-    ],
-  },
-  {
-    title: "Mother's Details",
-    details: [
-      { name: "Name", value: "Name" },
-      { name: "Profession", value: "Profession" },
-      { name: "Income / Year", value: "xxxxxx" },
-      { name: "Mobile No.", value: "+91 xxxxxxxxxx" },
-      { name: "Email ID", value: "mother@gmail.com" },
-    ],
-  },
-  {
-    title: "Bank Account Details",
-    details: [
-      { name: "Beneficiary Name", value: "Name" },
-      { name: "Bank Name", value: "NA" },
-      { name: "A/C No.", value: "NA" },
-      { name: "A/C Type", value: "NA" },
-      { name: "IFSC No.", value: "NA" },
-      { name: "City Name", value: "NA" },
-      { name: "Branch Name", value: "NA" },
-      { name: "Branch Code", value: "NA" },
-    ],
-  },
-  {
-    title: "Extracurricular",
-    details: [{ name: "Status", value: "NA" }],
-  },
-];
+
 
 export default function Personal() {
+  const personalDetails = [
+    { name: "Date of Birth", value: "06/06/2006" },
+    { name: "Nationality", value: "Indian" },
+    { name: "Category", value: "General" },
+    { name: "Aadhaar Number", value: "-" },
+    { name: "Name of Fee-paying Guardian", value: "-" },
+    { name: "Personal Phone Number", value: "9999999999" },
+    { name: "Alternate Email ID", value: "abcd@gmail.com" },
+    { name: "Education Loan", value: "No" },
+    { name: "Blood Group", value: "AB+" },
+    { name: "Allergies", value: "None" },
+    { name: "Chronic Diseases", value: "None" },
+  ];
+
+  const fathersDetails = [
+    { name: "Name", value: "Fatherly Name" },
+    { name: "Profession", value: "Doctor" },
+    { name: "Income per Year", value: "15,00,000" },
+    { name: "Phone Number", value: "9999999999" },
+    { name: "Email ID", value: "abcd@gmail.com" },
+  ];
+
+  const mothersDetails = [
+    { name: "Name", value: "Motherly Name" },
+    { name: "Profession", value: "Engineer" },
+    { name: "Income per Year", value: "15,00,000" },
+    { name: "Phone Number", value: "9999999999" },
+    { name: "Email ID", value: "abcd@gmail.com" },
+  ];
+
+  const bankDetails = [
+    { name: "Beneficiary Name", value: "Chill Guy Ramesh" },
+    { name: "Bank Name", value: "-" },
+    { name: "A/C Number", value: "-" },
+    { name: "A/C Type", value: "-" },
+    { name: "IFSC Code", value: "-" },
+    { name: "City Name", value: "-" },
+    { name: "Branch Name", value: "-" },
+    { name: "Branch Code", value: "-" },
+  ];
+
+  const extracurricular = [
+    { name: "Status", value: "N/A" }
+  ];
+
+  const renderSection = (title, details) => (
+    <div className={styles.section}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.details}>
+        {details.map((detail, idx) => (
+          <div key={idx} className={styles.row}>
+            <div className={styles.label}>{detail.name}:</div>
+            <div className={styles.value}>{detail.value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.personal}>
-      {sections.map((section, index) => (
-        <div key={index} className={styles.section}>
-          <div className={styles.title}>{section.title}</div>
-          <div className={styles.details}>
-            {section.details.map((detail, idx) => (
-              <div key={idx} className={styles.row}>
-                <div className={styles.label}>{detail.name}:</div>
-                <div className={styles.value}>{detail.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
+      <div className={styles.leftColumn}>
+        {renderSection("PERSONAL DETAILS", personalDetails)}
+        {renderSection("BANK ACCOUNT DETAILS", bankDetails)}
+      </div>
+      <div className={styles.rightColumn}>
+        {renderSection("FATHER’S DETAILS", fathersDetails)}
+        {renderSection("MOTHER’S DETAILS", mothersDetails)}
+        {renderSection("EXTRACURRICULAR", extracurricular)}
+      </div>
       <div className={styles.buttonContainer}>
         <Button className={styles.changeBtn}>Change</Button>
       </div>
