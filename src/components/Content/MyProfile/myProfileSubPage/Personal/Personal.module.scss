@@ -53,7 +53,7 @@
         font-weight: 400;
 
         .label {
-          min-width: 180px; // Fixed width for labels alignment
+          min-width: 250px; // Fixed width for labels alignment
           font-weight: 500;
           color: #333;
         }
@@ -86,6 +86,17 @@
       "right"
       "button";
     grid-template-columns: 1fr;
+
+    .section {
+
+      .details .row {
+
+
+        .label {
+          min-width: 250px;
+        }
+      }
+    }
   }
 
   @media (max-width: 790px) {
@@ -101,7 +112,51 @@
         // But on very small screens, 180px label might be too wide.
 
         .label {
-          min-width: 140px; // Reduce label width on mobile
+          min-width: 250px; /// Reduce label width on mobile
+
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+
+    .section {
+
+      .details .row {
+
+        .label {
+          min-width: 200px; /// Reduce label width on mobile
+
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+
+    .section {
+
+      .details .row {
+
+        .label {
+          min-width: 150px; /// Reduce label width on mobile
+
+        }
+      }
+    }
+  }
+
+  @media (max-width: 350px) {
+
+    .section {
+
+      .details .row {
+        flex-wrap: wrap;
+
+        .label {
+          min-width: fit-content; /// Reduce label width on mobile
+
         }
       }
     }
