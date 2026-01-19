@@ -12,23 +12,35 @@
     margin-bottom: 20px;
     text-align: center;
 
-    p {
-      font-weight: 600;
+    &>p:first-child {
+      font-weight: 700;
+      color: $themeColor;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
     }
 
     .contactRow {
-      display: flex;
-      gap: 10px;
+      // Use Grid for precise center alignment on desktop
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px; // Space between Label and Value
       margin: 10px 0;
+      align-items: center;
 
       span {
         font-weight: 500;
+        justify-self: end; // Push label to the right (towards center)
+        text-align: right;
       }
 
       a {
+        justify-self: start; // Push value to the left (towards center)
+        text-align: left;
+
         color: $themeColor;
         text-decoration: none;
-        display: flex;
+        display: flex; // restore flex for icon + text
         align-items: center;
         gap: 8px;
 
@@ -36,6 +48,7 @@
           width: 18px;
           height: 18px;
         }
+
         p {
           font-weight: 400;
         }
@@ -47,21 +60,37 @@
     background-color: $themeBgColor;
     padding: 20px 30px;
     border-radius: 15px;
+    position: relative; // For status indicator
+
+    .statusIndicator {
+      width: 16px;
+      height: 16px;
+      background-color: #888;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
     p {
       margin: 5px 0;
     }
+
     .notEligible {
-      color: red;
+      color: #000;
+      font-weight: 700;
     }
   }
 }
 
 @media screen and (max-width: 920px) {
   .overview {
-    font-size: 0.8rem;
+    font-size: 0.9rem; // Bumped up slightly from 0.8
+
     .contactDetails {
       padding: 20px;
     }
+
     .notice {
       padding: 20px;
     }
@@ -72,19 +101,43 @@
   .overview {
     .contactDetails {
       padding: 20px 15px;
-      .contactRow:nth-child(3) {
+      text-align: left; // Reset text align for mobile rows
+
+      &>p:first-child {
+        text-align: center; // Keep title centered
+        margin-bottom: 20px;
+      }
+
+      .contactRow {
+        display: flex; // Switch back to flex for mobile usage
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 15px;
+
+        span {
+          justify-self: auto; // Reset grid prop
+          text-align: left;
+        }
+
         a {
+          justify-self: auto; // Reset grid prop
+
           p {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 175px;
+            word-break: break-all; // Ensure long emails wrap if needed
           }
         }
       }
     }
+
     .notice {
-      padding: 20px 15px;
+      padding: 25px 20px; // More padding for nicer look
+
+      .statusIndicator {
+        top: 15px;
+        right: 15px;
+      }
     }
   }
 }

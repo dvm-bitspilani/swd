@@ -32,6 +32,7 @@
         overflow-y: auto;
         padding-right: var(--mainContentPadding);
         padding-bottom: var(--mainContentPadding);
+        padding-left: var(--mainContentPadding); // Add Left Padding
         width: 100%;
       }
     }

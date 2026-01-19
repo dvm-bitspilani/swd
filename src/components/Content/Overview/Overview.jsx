@@ -30,6 +30,7 @@ export default function Overview() {
       </section>
 
       <section className={styles.notice}>
+        <div className={styles.statusIndicator}></div>
         <p>Dear Student,</p>
         <p>
           You have not been awarded Merit or Merit-cum-Need (MCN) Scholarship

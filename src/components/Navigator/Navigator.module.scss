@@ -12,18 +12,22 @@
   align-items: center;
   transition: background-color 0.25s;
   min-width: 150px;
+
+  // Allow text wrapping
+  text-align: center;
+  line-height: 1.2;
 }
 
 .navigator {
   display: flex;
   align-items: center;
   gap: 15px;
-  height: 54px;
+  // Removed fixed height to allow wrapping
+  min-height: 54px;
   padding-left: 22px;
   font-family: "Inter";
-  min-height: fit-content;
-  flex-shrink: 0;
-
+  padding-top: 5px; // Add some breathing room if it wraps
+  padding-bottom: 5px;
 
   a {
     color: black;
@@ -31,27 +35,63 @@
     display: flex;
     gap: 8px;
 
+    // Breadcrumb text wrapping
+    max-width: 200px;
+    white-space: normal;
+    text-align: left;
+    line-height: 1.2;
+
     img {
       width: 18px;
       height: 18px;
+      flex-shrink: 0; // Prevent icon shrinking
     }
   }
 
   .forwardArrowSVG {
     width: 9px;
     height: 9px;
+    flex-shrink: 0;
+  }
+
+  // Container for tabs
+  .tabsContainer {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    // Enable Scrolling (Desktop & Mobile)
+    overflow-x: auto;
+    flex: 1; // Take available space
+    min-width: 0; // Allow shrinking for scroll
+
+    // Hide Scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    // Fade effect 
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
   }
 
   .item {
     @include box;
     background-color: $bodyColor;
     color: $themeColor;
+
+    // Ensure tabs don't shrink smaller than min-width in mixin
+    flex-shrink: 0;
   }
 
   .activeItem {
     @include box;
     color: $bodyColor;
     background-color: $themeColor;
+    flex-shrink: 0;
   }
 }
 
@@ -63,6 +103,33 @@
 @media screen and (max-width: 790px) {
   .navigator {
     padding-left: 20px;
+    flex-wrap: wrap;
+    row-gap: 15px; // Gap between rows
+    height: auto; // Ensure it grows
+
+    .tabsContainer {
+      width: 100%;
+      // Use margin hack for safe centering
+      padding-bottom: 5px;
+
+      // Reset flex behavior for full width row
+      flex: none;
+
+      // Remove mask on mobile to avoid clipping centered items
+      mask: none !important;
+      -webkit-mask: none !important;
+      mask-image: none !important;
+      -webkit-mask-image: none !important;
+
+      // Center if fits, Start if overflows
+      &> :first-child {
+        margin-left: auto;
+      }
+
+      &> :last-child {
+        margin-right: auto;
+      }
+    }
   }
 
   .mobileNavToggle {

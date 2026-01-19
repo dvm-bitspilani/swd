@@ -39,23 +39,25 @@ export default function Navigator({ url = "overview" }) {
             alt="forwardArrowSVG"
             className={styles.forwardArrowSVG}
           />
-          {activePage.subPages.map((subPage, index) => {
-            return (
-              <NavLink
-                to={`${url}/${subPage.url}`}
-                key={index}
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                      ? styles.activeItem
-                      : styles.item
-                }
-              >
-                {subPage.name}
-              </NavLink>
-            );
-          })}
+          <div className={styles.tabsContainer}>
+            {activePage.subPages.map((subPage, index) => {
+              return (
+                <NavLink
+                  to={`${url}/${subPage.url}`}
+                  key={index}
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                        ? styles.activeItem
+                        : styles.item
+                  }
+                >
+                  {subPage.name}
+                </NavLink>
+              );
+            })}
+          </div>
         </>
       )}
     </div>
