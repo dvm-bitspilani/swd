@@ -15,26 +15,82 @@
   gap: 28.5px;
   font-family: "inter", sans-serif;
   font-size: 19.9px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding: 15px 25px;
+    gap: 15px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
   .academicDetails {
     text-align: center;
+
     .tableHead {
       font-size: 21px;
       font-weight: 600;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 16px;
+      }
+
       th {
         width: 180px;
+
+        @media (max-width: 768px) {
+          width: 120px;
+        }
+
+        @media (max-width: 450px) {
+          width: auto;
+          padding: 0 5px;
+        }
       }
     }
+
     .tableRow {
       font-size: 36px;
       font-weight: 600;
       color: #ea9830;
+
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+
       .cg {
         color: $themeColor;
       }
     }
   }
+
   .disclaimer {
     @include flexCenter;
     font-size: 19.9px;
+    text-align: center; // Ensure text is centered
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 14px;
+    }
+
+    .line1,
+    .line2 {
+      text-align: center;
+    }
   }
 }

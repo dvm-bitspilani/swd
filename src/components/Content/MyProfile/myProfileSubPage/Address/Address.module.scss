@@ -15,23 +15,62 @@
   gap: 28.5px;
   font-family: "inter", sans-serif;
   font-size: 19.9px;
+
   .addresslines {
     @include flexCenter;
   }
+
   .addressChangeMail {
     @include flexCenter(row);
     gap: 5px;
+    flex-wrap: wrap; // Allow wrapping
+    text-align: center; // Center text when wrapped
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Stack vertically on mobile
+      gap: 2px;
+    }
+
     .forAddChange {
       font-weight: 500;
+
+      // Decrease font size on smaller screens
+      @media (max-width: 600px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+      }
     }
+
     .mailId {
       @include flexCenter(row);
       gap: 15px;
       font-weight: 400px;
+
+      // Decrease font size on smaller screens
+      @media (max-width: 600px) {
+        font-size: 16px;
+        gap: 8px;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+        gap: 5px;
+      }
+
+      .pleaseMail {
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+
       a {
         @include flexCenter(row);
         color: $themeColor;
         text-decoration: none;
+
         img {
           scale: 0.75;
         }

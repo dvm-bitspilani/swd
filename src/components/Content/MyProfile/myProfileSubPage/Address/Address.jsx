@@ -26,7 +26,7 @@ export default function Address() {
       <div className={styles.addressChangeMail}>
         <span className={styles.forAddChange}>For address change: </span>
         <span className={styles.mailId}>
-          Please mail
+          <span className={styles.pleaseMail}>Please mail</span>
           <a href="#" className={styles.mailLink}>
             <img src={mail} className="mailIcon" alt="mail" />
             swdcomputerlab@gmail.com
