@@ -2,26 +2,66 @@
 
 .general {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  padding: 25.5px 45px;
-  border-radius: var(--borderRadius);
-  background-color: $themeBgColor;
-  //   align-items: center;
-  .detail {
-    display: grid;
-    grid-template-columns: 324px auto;
-    font-family: "inter", sans-serif;
-    font-size: 18.75px;
-    .name {
-      font-weight: 500;
+  flex-direction: row; // Default to row for side-by-side
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0; // Remove padding from main container as sections will have it or be self-contained
+  background-color: transparent; // Main container doesn't need bg anymore
+
+  @media (max-width: 1400px) {
+    flex-direction: column; // Stack vertically on mobile
+    gap: 15px;
+  }
+
+  .section {
+    flex: 1;
+    background-color: #d9d9d9; // Grayish background from image
+    border-radius: 15px; // Approximate radius
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+
+    @media (max-width: 790px) {
+      gap: 5px;
+      padding: 15px 20px;
     }
-    .value {
-      font-weight: 400;
-      color: $themeColor;
-      a {
-        color: $linkColor;
+
+    .detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr; // Equal or adjusted columns
+      font-family: "inter", sans-serif;
+      font-size: 16px; // Adjusted size
+      align-items: start;
+
+      @media (max-width: 790px) {
+        font-size: 14px;
+        grid-template-columns: 1fr; // Stack labels and values on very small screens if needed, usually keeping side-by-side is ok for this data but let's stick to simple grid first. 
+        // Actually, looking at the mobile design, they are still side-by-side. 
+        // Let's refine the columns.
+        grid-template-columns: 140px auto;
+      }
+
+      // Desktop column width refinement
+      @media (min-width: 791px) {
+        grid-template-columns: 200px auto;
+      }
+
+      .name {
+        font-weight: 500;
+        color: #1e1e1e;
+      }
+
+      .value {
+        font-weight: 400;
+        color: #2e3c88; // Blue color from image
+        word-break: break-word; // Prevent overflow
+
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
       }
     }
   }

@@ -1,57 +1,60 @@
 import styles from "./General.module.scss";
 
-const policyDetails = [
+const personalDetails = [
   {
     name: "Name",
-    value: "Name",
+    value: "Chill Guy Ramesh",
   },
   {
     name: "Sex",
-    value: "Male / Female",
+    value: "Male",
   },
   {
     name: "Hostel",
-    value: "Hostel",
+    value: "Gandhi Bhawan",
   },
   {
     name: "Room",
-    value: "xxxx",
+    value: "2137",
   },
   {
     name: "Admission Year",
-    value: "yyyy",
+    value: "2025",
   },
   {
-    name: "Admission Sem",
-    value: "α",
+    name: "Admission Semester",
+    value: "1",
   },
+];
+
+const policyDetails = [
   {
-    name: "Name of the Group Policy Holder",
+    name: "Name of Group Policy Holder",
     value: "BIRLA INSTITUTE OF TECHNOLOGY & SCIENCE",
   },
   {
     name: "Policy Number (GMC)",
-    value: "",
+    value: "-",
   },
   {
     name: "Policy Number (GPA)",
-    value: "",
+    value: "-",
   },
   {
     name: "Policy Commencement Date",
-    value: "",
+    value: "-",
   },
   {
     name: "Policy End Date",
-    value: "",
+    value: "-",
   },
   {
     name: "Member ID",
-    value: "",
+    value: "-",
   },
   {
     name: "Check List for TPA",
-    value: <a href="#">CHECK_LIST</a>,
+    value: <a href="#">CHECK LIST</a>,
   },
   {
     name: "Reckoner GMC",
@@ -66,12 +69,22 @@ const policyDetails = [
 export default function General() {
   return (
     <div className={styles.general}>
-      {policyDetails.map((detail, index) => (
-        <div className={styles.detail} key={index}>
-          <div className={styles.name}>{detail.name}:</div>
-          <div className={styles.value}>{detail.value}</div>
-        </div>
-      ))}
+      <div className={styles.section}>
+        {personalDetails.map((detail, index) => (
+          <div className={styles.detail} key={index}>
+            <div className={styles.name}>{detail.name}:</div>
+            <div className={styles.value}>{detail.value}</div>
+          </div>
+        ))}
+      </div>
+      <div className={styles.section}>
+        {policyDetails.map((detail, index) => (
+          <div className={styles.detail} key={index}>
+            <div className={styles.name}>{detail.name}:</div>
+            <div className={styles.value}>{detail.value}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
