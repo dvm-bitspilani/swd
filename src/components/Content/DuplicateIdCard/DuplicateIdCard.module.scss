@@ -5,21 +5,34 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   .formContainer {
     padding: 25.5px 45px;
     border-radius: var(--borderRadius);
     background-color: $themeBgColor;
+
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+    }
+
     .duplicateForm {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 20px;
+
       .title {
         font-size: 18.75px;
         color: $themeColor;
         font-weight: 600;
+        text-align: center;
+
+        @media (max-width: 790px) {
+          font-size: 16px;
+        }
       }
+
       input[type="radio"] {
         appearance: none;
         -webkit-appearance: none;
@@ -37,11 +50,18 @@
           background-color: $themeColor;
         }
       }
+
       .optsContainer {
         font-size: 19.9px;
+
+        @media (max-width: 790px) {
+          font-size: 14px;
+        }
+
         display: flex;
         flex-direction: column;
         gap: 10px;
+
         .option {
           display: flex;
           align-items: center;
@@ -64,11 +84,19 @@
     padding: 25.5px 30px;
     padding-top: 0px;
     font-size: 18.75px;
+
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+      font-size: 14px;
+    }
+
     display: flex;
     flex-direction: column;
     font-weight: 600;
+
     ul {
       padding-left: 30px;
+
       li {
         font-weight: 400;
       }

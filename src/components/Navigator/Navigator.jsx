@@ -22,16 +22,18 @@ export default function Navigator({ url = "overview" }) {
         <span></span>
       </button>
 
-      <a href="#">
-        <img src={globe} alt="globeSVG" />
-        SWD
-      </a>
-      <img
-        src={forwardArrow}
-        alt="forwardArrowSVG"
-        className={styles.forwardArrowSVG}
-      />
-      <p>{activePage.name}</p>
+      <div className={styles.breadcrumbPath}>
+        <a href="#">
+          <img src={globe} alt="globeSVG" />
+          SWD
+        </a>
+        <img
+          src={forwardArrow}
+          alt="forwardArrowSVG"
+          className={styles.forwardArrowSVG}
+        />
+        <p>{activePage.name}</p>
+      </div>
       {activePage.subPages.length > 0 && (
         <>
           <img

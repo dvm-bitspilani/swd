@@ -2,26 +2,37 @@
 
 .gate {
   font-family: "inter";
+
   .infoText {
-    padding: 25.5px 30px;
-    padding-top: 0px;
+    padding: 0px 5px 20px 5px;
     font-size: 18.75px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-weight: 400;
+
+    @media (max-width: 790px) {
+      font-size: 14px;
+      padding: 0 5px 20px 5px;
+    }
+
     a {
       color: $linkColor;
     }
   }
+
   .formContainer {
-    padding: 25.5px 45px;
+    padding: 40px 45px 25.5px 45px;
     border-radius: var(--borderRadius);
     background-color: $themeBgColor;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
+
+    @media (max-width: 790px) {
+      padding: 30px 20px 20px 20px;
+    }
 
     .inputContainer {
       display: flex;
@@ -41,11 +52,25 @@
 
       .formGroup {
         display: flex;
+
+        @media (max-width: 1200px) {
+          flex-direction: column;
+          gap: 5px;
+        }
+
         .label {
           font-size: 18.75px;
           color: $themeColor;
           width: 350px;
           font-weight: 500;
+
+          @media (max-width: 1200px) {
+            width: 100%;
+          }
+
+          @media (max-width: 790px) {
+            font-size: 14px;
+          }
         }
 
         .dateInputWrapper {
@@ -53,12 +78,12 @@
           display: inline-block;
         }
 
-        .dateInput:required:invalid + .placeholder {
+        .dateInput:required:invalid+.placeholder {
           display: block;
         }
 
-        .dateInput:focus + .placeholder,
-        .dateInput:valid + .placeholder {
+        .dateInput:focus+.placeholder,
+        .dateInput:valid+.placeholder {
           display: none;
         }
 
@@ -75,12 +100,15 @@
         .dateInput::-webkit-datetime-edit-fields-wrapper {
           display: none;
         }
+
         .dateInput::-webkit-date-and-time-value {
           opacity: 1;
         }
+
         .dateInput:focus::-webkit-datetime-edit-fields-wrapper {
           display: inline-block;
         }
+
         .input {
           padding: 0px 10px;
           font-size: 16.5px;
@@ -90,10 +118,26 @@
           border-radius: 4.5px;
           background-color: $inputBgColor;
           font-family: "inter";
+
+          @media (max-width: 1200px) {
+            width: 100%;
+            max-width: 400px;
+          }
+
+          @media (max-width: 790px) {
+            font-size: 14px;
+          }
         }
+
         .short {
           width: 250px;
+
+          @media (max-width: 1200px) {
+            width: 100%;
+            max-width: 250px;
+          }
         }
+
         textarea {
           padding: 0px 10px;
           font-size: 16.5px;
@@ -103,9 +147,19 @@
           border-radius: 4.5px;
           background-color: $inputBgColor;
           font-family: "inter";
+
+          @media (max-width: 1200px) {
+            width: 100%;
+            max-width: 400px;
+          }
+
+          @media (max-width: 790px) {
+            font-size: 14px;
+          }
         }
       }
     }
+
     .saveBtn {
       width: 170px;
     }

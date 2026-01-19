@@ -9,6 +9,12 @@
   flex-direction: column;
   gap: 10px;
   font-weight: 400;
+
+  @media (max-width: 790px) {
+    font-size: 14px;
+    padding: 0 10px 15px 10px; // Reduced padding (Top, Right, Bottom, Left)
+  }
+
   a {
     color: $linkColor;
   }

@@ -1,4 +1,5 @@
 @use "/src/assets/global.scss" as *;
+
 .mcn {
   font-family: "inter";
   display: flex;
@@ -13,6 +14,10 @@
     flex-direction: column;
     gap: 25px;
     align-items: center;
+
+    @media (max-width: 790px) {
+      padding: 15px 20px; // Reduced padding
+    }
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -33,6 +38,15 @@
       width: 100%;
 
       align-self: flex-start;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr; // Vertical stack
+        grid-template-rows: auto;
+      }
+
+      @media (max-width: 790px) {
+        font-size: 14px; // Responsive font size
+      }
 
       .label {
         color: $themeColor;
@@ -86,6 +100,10 @@
           font-family: "inter";
           background-color: $inputBgColor;
 
+          @media (max-width: 790px) {
+            font-size: 14px;
+          }
+
           &:focus {
             outline: none;
           }
@@ -95,7 +113,7 @@
           scale: 0.75;
         }
 
-        .icon:hover + .hoverInfo {
+        .icon:hover+.hoverInfo {
           display: block;
         }
       }
@@ -103,13 +121,22 @@
       .uploadSection {
         grid-row: 2/3;
         grid-column: 1/3;
-        justify-self: center;
+        justify-self: center; // Center on desktop
         display: flex;
+
+        @media (max-width: 1200px) {
+          grid-column: 1/2; // Adjust for single column
+          grid-row: auto;
+          justify-self: start; // Align start on mobile/vertical
+        }
+
         flex-direction: column;
         gap: 10px;
+
         .fileInfo {
           color: $themeColor;
         }
+
         .fileInput {
           position: relative;
           height: 30px;
@@ -154,6 +181,13 @@
       border: 2px solid black;
       font-size: 15px;
       font-weight: 500;
+
+      @media (max-width: 790px) {
+        width: 100%;
+        padding: 15px;
+        font-size: 14px;
+      }
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -173,11 +207,11 @@
         accent-color: $themeColor;
 
         &:checked {
-          background: $checkbox-bg no-repeat center center /
-            120%;
+          background: $checkbox-bg no-repeat center center / 120%;
           border: none;
         }
       }
+
       .checkBoxContainer {
         display: flex;
         align-items: center;
@@ -190,6 +224,7 @@
       width: 170px;
     }
   }
+
   .errorMsg {
     margin: 20px;
     align-self: center;

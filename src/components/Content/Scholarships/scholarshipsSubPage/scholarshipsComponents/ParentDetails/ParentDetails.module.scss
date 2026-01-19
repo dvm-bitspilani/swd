@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   .label {
     color: $themeColor;
   }
@@ -12,8 +13,10 @@
     font-size: 19.9px;
     font-weight: 600;
   }
+
   .autoFillData {
     display: flex;
+
     .label {
       width: 150px;
     }
@@ -33,6 +36,12 @@
       padding-right: 8px;
       border-radius: 4.5px;
       position: relative;
+
+      @media (max-width: 790px) {
+        width: 100%;
+        max-width: 300px;
+        font-size: 14px;
+      }
 
       .hoverInfo {
         position: absolute;
@@ -79,7 +88,7 @@
         scale: 0.75;
       }
 
-      .icon:hover + .hoverInfo {
+      .icon:hover+.hoverInfo {
         display: block;
       }
     }
@@ -93,6 +102,12 @@
       border-radius: 4.5px;
       background-color: $inputBgColor;
       font-family: "inter";
+
+      @media (max-width: 790px) {
+        font-size: 14px;
+        width: 100%; // Make responsive
+        max-width: 300px; // Match input box constraint
+      }
     }
   }
 }

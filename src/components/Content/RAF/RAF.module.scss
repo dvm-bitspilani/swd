@@ -11,6 +11,10 @@
     border-radius: var(--borderRadius);
     background-color: $themeBgColor;
 
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+    }
+
     .certificateForm {
       display: flex;
       flex-direction: column;
@@ -22,11 +26,22 @@
         font-size: 18.75px;
         color: $themeColor;
         font-weight: 600;
+        text-align: center;
+
+        @media (max-width: 790px) {
+          font-size: 16px;
+        }
       }
+
       .info {
         font-size: 19.9px;
         font-weight: 500;
+
+        @media (max-width: 790px) {
+          font-size: 14px;
+        }
       }
+
       .selOptsContainer {
         .certificateDropdown {
           font-size: 18.75px;
@@ -35,6 +50,16 @@
           border: none;
           border-radius: 4.5px;
           background-color: $inputBgColor;
+
+          @media (max-width: 790px) {
+            width: 300px;
+            max-width: 100%;
+            font-size: 14px;
+          }
+
+          @media (max-width: 350px) {
+            width: 200px;
+          }
         }
       }
     }
@@ -46,6 +71,7 @@
       }
     }
   }
+
   .prevApplied {
     padding: 25.5px 45px;
     border-radius: var(--borderRadius);
@@ -56,11 +82,19 @@
     align-items: center;
     gap: 15px;
     font-size: 19.9px;
+
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+      font-size: 14px;
+    }
+
     .title {
       font-weight: 600;
       font-size: 18.75px;
       color: $themeColor;
+      text-align: center;
     }
+
     .appliedCerti {
       span {
         font-weight: 500;

@@ -2,6 +2,7 @@
 
 .certificates {
   font-family: "inter";
+
   .selectCertificate {
     padding: 25.5px 45px;
     border-radius: var(--borderRadius);
@@ -13,11 +14,17 @@
       justify-content: center;
       align-items: center;
       gap: 15px;
+
       .title {
         font-size: 18.75px;
         color: $themeColor;
         font-weight: 600;
+
+        @media (max-width: 790px) {
+          font-size: 16px;
+        }
       }
+
       .selOptsContainer {
         .certificateDropdown {
           font-size: 18.75px;
@@ -26,6 +33,12 @@
           border: none;
           border-radius: 4.5px;
           background-color: $inputBgColor;
+
+          @media (max-width: 790px) {
+            font-size: 14px;
+            width: 100%; // Responsive width
+            max-width: 420px;
+          }
         }
       }
     }
@@ -41,6 +54,11 @@
   .info {
     padding: 25.5px 30px;
     font-size: 19.9px;
+    text-align: center; // Center align text
+
+    @media (max-width: 790px) {
+      font-size: 14px;
+    }
   }
 
   .prevApplied {
@@ -53,10 +71,20 @@
     align-items: center;
     gap: 15px;
     font-size: 19.9px;
+    text-align: center; // Center align text
+
+    @media (max-width: 790px) {
+      font-size: 14px; // Responsive font size for "Not Applied" text
+    }
+
     .title {
       font-size: 18.75px;
       color: $themeColor;
       font-weight: 600;
+
+      @media (max-width: 790px) {
+        font-size: 16px;
+      }
     }
   }
 }

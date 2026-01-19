@@ -16,6 +16,13 @@
   // Allow text wrapping
   text-align: center;
   line-height: 1.2;
+
+  @media (max-width: 790px) {
+    font-size: 14px;
+    padding: 8px 12px;
+    min-width: 100px;
+    border-radius: 8px;
+  }
 }
 
 .navigator {
@@ -29,15 +36,27 @@
   padding-top: 5px; // Add some breathing room if it wraps
   padding-bottom: 5px;
 
+  .breadcrumbPath {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    // Allow it to shrink and truncate but NOT grow
+    min-width: 0;
+    overflow: hidden;
+    flex: 0 1 auto;
+    // Constrain width to ensure it fits next to hamburger (40px + 15px gap + padding)
+    max-width: calc(100% - 80px);
+  }
+
   a {
     color: black;
     text-decoration: none;
     display: flex;
     gap: 8px;
 
-    // Breadcrumb text wrapping
-    max-width: 200px;
-    white-space: normal;
+    // Prevent breadcrumb text wrapping
+    white-space: nowrap;
     text-align: left;
     line-height: 1.2;
 
@@ -46,6 +65,12 @@
       height: 18px;
       flex-shrink: 0; // Prevent icon shrinking
     }
+  }
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .forwardArrowSVG {
@@ -129,6 +154,12 @@
       &> :last-child {
         margin-right: auto;
       }
+    }
+
+    // Hide the standalone arrow (separating Breadcrumb and Tabs) on mobile
+    // It's a direct child of .navigator
+    &>.forwardArrowSVG {
+      display: none;
     }
   }
 

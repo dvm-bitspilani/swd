@@ -2,32 +2,51 @@
 
 .infoText {
   font-family: "inter";
-  padding: 25.5px 30px;
-  padding-top: 0px;
+  padding: 0px 5px 20px 5px;
   font-size: 18.75px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-weight: 400;
+
+  @media (max-width: 790px) {
+    font-size: 14px;
+    padding: 0 5px 20px 5px;
+  }
 }
 
 .travelComponent {
   font-family: "inter";
-  padding: 25.5px 45px;
+  padding: 40px 45px 25.5px 45px;
   border-radius: var(--borderRadius);
   background-color: $themeBgColor;
   display: flex;
   flex-direction: column;
   gap: 25px;
   align-items: center;
+
+  @media (max-width: 790px) {
+    padding: 30px 20px 15px 20px;
+  }
+
   .formGroupContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     width: 100%;
 
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .border {
       border-right: 1px solid black;
+
+      @media (max-width: 1200px) {
+        border-right: none;
+      }
     }
 
     .formGroup {
@@ -39,10 +58,23 @@
       gap: 8px;
 
       width: 100%;
+
       .label {
         font-weight: 500;
         width: 300px;
+
+        @media (max-width: 1200px) {
+          text-align: center;
+          width: 100%;
+          max-width: 300px;
+        }
+
+        @media (max-width: 790px) {
+          font-size: 14px;
+          text-align: center;
+        }
       }
+
       .select {
         padding: 0px 10px;
         font-size: 16.5px;
@@ -52,6 +84,15 @@
         border-radius: 4.5px;
         background-color: $inputBgColor;
         font-family: "inter";
+
+        @media (max-width: 790px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 1200px) {
+          width: 100%;
+          max-width: 300px;
+        }
       }
     }
   }
@@ -71,8 +112,7 @@
 
     &:checked {
       border: none;
-      background: $checkbox-bg no-repeat center center /
-        120%;
+      background: $checkbox-bg no-repeat center center / 120%;
     }
   }
 
@@ -82,6 +122,16 @@
     align-items: center;
     gap: 8px;
     font-size: 19.9px;
+
+    .title {
+      @media (max-width: 790px) {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 790px) {
+      font-size: 14px;
+    }
 
     .checkBoxDiv {
       display: flex;

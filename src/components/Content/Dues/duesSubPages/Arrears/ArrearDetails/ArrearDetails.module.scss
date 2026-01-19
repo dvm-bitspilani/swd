@@ -13,7 +13,7 @@
     font-size: 19.8px;
     font-weight: 600;
 
-    @media (max-width: 768px) {
+    @media (max-width: 790px) {
       font-size: 16px;
     }
   }
@@ -44,10 +44,10 @@
         }
       }
 
-      tr {
-        // Apply alternating row colors? Image suggests rows have bg colors.
-        // Let's stick to standard for now, but row labels need styling.
-      }
+      // tr {
+      //   // Apply alternating row colors? Image suggests rows have bg colors.
+      //   // Let's stick to standard for now, but row labels need styling.
+      // }
 
       .rowLabel {
         background-color: var(--yellow-header-bg, #FFEB99); // First column yellow

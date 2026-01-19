@@ -1,4 +1,5 @@
 @use "/src/assets/global.scss" as *;
+
 .saf {
   font-family: "inter";
   display: flex;
@@ -14,6 +15,10 @@
     gap: 25px;
     align-items: center;
 
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+    }
+
     .details {
       font-size: 18.75px;
       display: grid;
@@ -24,12 +29,22 @@
 
       align-self: flex-start;
 
+      @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      @media (max-width: 790px) {
+        font-size: 14px;
+      }
+
       .label {
         color: $themeColor;
       }
 
       .autoFillData {
         display: flex;
+
         .label {
           width: 150px;
         }
@@ -41,6 +56,13 @@
         align-self: center;
         justify-self: center;
         display: flex;
+
+        @media (max-width: 1200px) {
+          grid-column: 1/2;
+          grid-row: auto;
+          justify-self: start;
+        }
+
         gap: 10px;
       }
     }
@@ -49,6 +71,7 @@
       width: 170px;
     }
   }
+
   .errorMsg {
     margin: 20px;
     align-self: center;

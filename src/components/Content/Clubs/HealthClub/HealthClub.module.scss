@@ -13,11 +13,20 @@
     flex-direction: column;
     gap: 25px;
 
+    @media (max-width: 790px) {
+      padding: 15px 20px;
+      font-size: 14px;
+    }
+
     .title {
       color: $themeColor;
       text-align: center;
       font-size: 19.9px;
       font-weight: 600;
+
+      @media (max-width: 790px) {
+        font-size: 16px;
+      }
     }
 
     .text {
@@ -33,11 +42,23 @@
     .formGroup {
       display: flex;
       gap: 20px;
+      justify-content: center; // Center the inputs on desktop
+      align-items: center; // Vertically align if needed
+
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 1200px) {
+        flex-direction: column;
+        align-items: center;
+      }
 
       .selectGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
         label {
-          margin-right: 10px;
           font-weight: 500;
         }
 
@@ -46,22 +67,47 @@
           font-size: 16.5px;
           height: 30px;
           width: 300px;
+          box-sizing: border-box;
           border: none;
           border-radius: 4.5px;
           background-color: $inputBgColor;
           font-family: "inter";
+
+          @media (max-width: 790px) {
+            font-size: 14px;
+          }
+
+          @media (max-width: 350px) {
+            width: 200px;
+          }
         }
       }
     }
 
     .checkboxGroup {
       align-self: center;
-      width: 40%;
+      width: fit-content; // Use fit-content to center securely
+      min-width: 250px; // Ensure it doesn't get too small
       border: none;
       padding: 0;
       display: grid;
       grid-template-columns: repeat(2, auto);
-      gap: 12px;
+      column-gap: 40px; // Adjust gap between columns (was relying on width/auto?) 
+      // User said "both row close". If cols are too far, reducing gap helps.
+      row-gap: 12px;
+      justify-content: center;
+
+      @media (max-width: 1200px) {
+        width: auto;
+      }
+
+      @media (max-width: 790px) {
+        width: fit-content;
+        min-width: fit-content;
+        grid-template-columns: 1fr; // Stack checkboxes on mobile
+        justify-items: start; // Align items to the start (left)
+        // Since container is centered via margin/flex, this aligns items left WITHIN the centered container
+      }
 
       label {
         display: flex;
@@ -89,8 +135,7 @@
           accent-color: $themeColor;
 
           &:checked {
-            background: $checkbox-bg no-repeat center
-              center/120%;
+            background: $checkbox-bg no-repeat center center/120%;
             border: none;
           }
         }
