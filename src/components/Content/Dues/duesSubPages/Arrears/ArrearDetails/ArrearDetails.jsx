@@ -52,41 +52,53 @@ const notes = [
 ];
 
 export default function ArrearDetails() {
+  const months = arrearData.map((d) => d.month);
+
+  const rows = [
+    { label: "Opening Balance", key: "openingBalance" },
+    { label: "Mess Charges", key: "messCharges" },
+    { label: "Electricity Charges", key: "electricityCharges" },
+    { label: "Other Dues", key: "otherDues" },
+    { label: "Deposit", key: "deposit" },
+    { label: "Withdrawal", key: "withdrawal" },
+    { label: "Closing Balance", key: "closingBalance" },
+  ];
+
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.header}>
           ARREAR DETAILS FOR THE CURRENT ACADEMIC YEAR
         </div>
-        <Table className={styles.table}>
-          <thead>
-            <tr className={styles.headerRow}>
-              {headerRow.map((cell, index) => (
-                <th className={styles.headerCell} key={index}>
-                  {cell}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {arrearData.map((row) => (
-              <tr key={row.month}>
-                {Object.keys(row).map((key) =>
-                  key != "otherDues" ? (
-                    <td key={key}>
-                      {row[key]}
-                    </td>
-                  ) : (
-                    <td key={key} className={styles.cell}>
-                      {row[key]}
-                      <img src={info} alt="infoSVG" className={styles.info} />
-                    </td>
-                  )
-                )}
+        <div className={styles.tableWrapper}>
+          <Table className={styles.table}>
+            <thead>
+              <tr className={styles.headerRow}>
+                <th className={styles.firstColHeader}></th>
+                {months.map((month, index) => (
+                  <th className={styles.headerCell} key={index}>
+                    {month}
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {rows.map((rowDesc) => (
+                <tr key={rowDesc.key}>
+                  <td className={styles.rowLabel}>{rowDesc.label}</td>
+                  {arrearData.map((data, index) => (
+                    <td key={index} className={styles.cell}>
+                      {data[rowDesc.key]}
+                      {rowDesc.key === "otherDues" && (
+                        <img src={info} alt="infoSVG" className={styles.info} />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </div>
       <div className={styles.notes}>
         Notes:

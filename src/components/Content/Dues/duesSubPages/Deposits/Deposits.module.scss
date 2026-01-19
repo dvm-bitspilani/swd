@@ -20,15 +20,20 @@
   }
 
   .tableWrapper {
-    //   overflow-x: auto;
+    overflow-x: auto; // Enable horizontal scrolling
 
     th {
       background-color: $tableHeaderBgColor;
       font-weight: 600;
       color: $themeColor;
+      padding: 10px; // Reduced padding
+      font-size: 14px; // Reduced font size
+      white-space: nowrap; // Prevent wrapping for compactness
+
       &:first-child {
         border-top-left-radius: 4.5px;
       }
+
       &:last-child {
         border-top-right-radius: 4.5px;
       }
@@ -36,9 +41,14 @@
 
     td {
       background-color: white;
+      padding: 10px; // Reduced padding
+      font-size: 14px; // Reduced font size
+      white-space: nowrap; // Prevent wrapping
+
       &:first-child {
         border-bottom-left-radius: 4.5px;
       }
+
       &:last-child {
         border-bottom-right-radius: 4.5px;
       }

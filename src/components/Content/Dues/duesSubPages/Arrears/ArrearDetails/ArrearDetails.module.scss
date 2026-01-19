@@ -12,42 +12,80 @@
     color: $themeColor;
     font-size: 19.8px;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 
-  .table {
-    th {
-      background-color: $tableHeaderBgColor;
-      font-weight: 600;
-      color: $themeColor;
-      &:first-child {
-        border-top-left-radius: 4.5px;
-      }
-      &:last-child {
-        border-top-right-radius: 4.5px;
-      }
-    }
+  .tableWrapper {
+    overflow-x: auto;
 
-    td {
-      background-color: white;
+    .table {
+      min-width: 100%;
 
-      &:first-child {
-        color: $themeColor;
+      .headerRow {
+        .firstColHeader {
+          background-color: var(--yellow-header-bg, #FFEB99); // Placeholder yellow
+          border-top-left-radius: 4.5px;
+        }
+
+        .headerCell {
+          background-color: var(--yellow-header-bg, #FFEB99); // Placeholder yellow
+          font-weight: 600;
+          color: $themeColor;
+          padding: 10px;
+          font-size: 14px;
+          white-space: nowrap;
+
+          &:last-child {
+            border-top-right-radius: 4.5px;
+          }
+        }
+      }
+
+      tr {
+        // Apply alternating row colors? Image suggests rows have bg colors.
+        // Let's stick to standard for now, but row labels need styling.
+      }
+
+      .rowLabel {
+        background-color: var(--yellow-header-bg, #FFEB99); // First column yellow
         font-weight: 600;
+        color: $themeColor;
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-align: left;
       }
-    }
 
-    .cell {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
+      .cell {
+        background-color: white;
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-align: center;
 
-      .info{
-        height: 15px;
-        width: 15px;
-        
-        &:hover{
+        display: table-cell; // Reset flex if it was flex
+        vertical-align: middle;
+
+        .info {
+          height: 12px;
+          width: 12px;
+          margin-left: 5px;
+          vertical-align: middle;
           cursor: pointer;
+        }
+      }
+
+      // Border radius for corners
+      tr:last-child {
+        .rowLabel {
+          border-bottom-left-radius: 4.5px;
+        }
+
+        .cell:last-child {
+          border-bottom-right-radius: 4.5px;
         }
       }
     }
@@ -62,6 +100,7 @@
   .note {
     margin: 5px 0;
   }
+
   .importantNote {
     color: #ed1c24;
     display: flex;
@@ -79,6 +118,7 @@
       -webkit-mask-size: contain;
       mask-size: contain;
     }
+
     &:hover {
       cursor: pointer;
     }

@@ -11,50 +11,82 @@
     color: $themeColor;
     font-size: 19.8px;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
     display: flex;
+    flex-direction: column; // Stack elements
     align-items: center;
     justify-content: center;
+    text-align: center; // Ensure text is centered
     position: relative;
-    .recNO{
+    gap: 5px;
+
+    .recNO {
       font-size: 14px;
       color: #525252;
-      position: absolute;
-      right: 15px;
+      align-self: flex-end; // Align to right
+      position: static; // No longer absolute
+      margin-bottom: 5px;
     }
   }
 
-  .table {
-    th {
-      background-color: $tableHeaderBgColor;
-      font-weight: 600;
-      color: $themeColor;
-      &:first-child {
-        border-top-left-radius: 4.5px;
-      }
-      &:last-child {
-        border-top-right-radius: 4.5px;
-      }
-    }
+  .tableWrapper {
+    overflow-x: auto;
 
-    td {
-      background-color: white;
+    .table {
+      min-width: 100%;
 
-      &:first-child {
+      .headerRow {
+        .firstColHeader {
+          background-color: var(--yellow-header-bg, #FFEB99);
+          border-top-left-radius: 4.5px;
+        }
+
+        .headerCell {
+          background-color: var(--yellow-header-bg, #FFEB99);
+          font-weight: 600;
+          color: $themeColor;
+          padding: 10px;
+          font-size: 14px;
+          white-space: nowrap;
+
+          &:last-child {
+            border-top-right-radius: 4.5px;
+          }
+        }
+      }
+
+      .rowLabel {
+        background-color: var(--yellow-header-bg, #FFEB99);
+        font-weight: 600;
         color: $themeColor;
-        font-weight: 600;
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-align: left;
       }
-    }
 
-    .headerRow {
-      .headerCell {
-        padding: 12px;
+      .cell {
+        background-color: white;
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
         text-align: center;
-        font-weight: 600;
       }
-    }
-    .cell {
-      padding: 12px;
-      text-align: center;
+
+      // Border radius for corners
+      tr:last-child {
+        .rowLabel {
+          border-bottom-left-radius: 4.5px;
+        }
+
+        .cell:last-child {
+          border-bottom-right-radius: 4.5px;
+        }
+      }
     }
   }
 }

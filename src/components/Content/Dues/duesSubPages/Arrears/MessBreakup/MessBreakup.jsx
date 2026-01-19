@@ -42,34 +42,49 @@ const headerRow = [
 const recNO = "XXXXX";
 
 export default function MessBreakup() {
+  const months = messData.map((d) => d.month);
+
+  const rows = [
+    { label: "Mess Basic", key: "messBasic" },
+    { label: "Pitstop Extra", key: "pitstopExtra" },
+    { label: "D Cafe", key: "dCafe" },
+    { label: "Food Extra", key: "foodExtra" },
+    { label: "Vacation", key: "summerWinter" },
+    { label: "Total Amount", key: "totalAmount" },
+  ];
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        MESS BREAKUP OF EACH MONTH
         <div className={styles.recNO}>REC NO. : {recNO}</div>
+        MESS FEES BREAKUP FOR THE CURRENT ACADEMIC YEAR
       </div>
-      <Table className={styles.table}>
-        <thead>
-          <tr className={styles.headerRow}>
-            {headerRow.map((header) => (
-              <th key={header} className={styles.headerCell}>
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {messData.map((row) => (
-            <tr key={row.month}>
-              {Object.keys(row).map((key) => (
-                <td key={key} className={styles.cell}>
-                  {row[key]}
-                </td>
+      <div className={styles.tableWrapper}>
+        <Table className={styles.table}>
+          <thead>
+            <tr className={styles.headerRow}>
+              <th className={styles.firstColHeader}></th>
+              {months.map((month, index) => (
+                <th key={index} className={styles.headerCell}>
+                  {month}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {rows.map((rowDesc) => (
+              <tr key={rowDesc.key}>
+                <td className={styles.rowLabel}>{rowDesc.label}</td>
+                {messData.map((data, index) => (
+                  <td key={index} className={styles.cell}>
+                    {data[rowDesc.key]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 }
